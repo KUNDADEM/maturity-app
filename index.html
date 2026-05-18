@@ -1222,10 +1222,54 @@ window.addEventListener('DOMContentLoaded', routeFromHash);
 
 /* Service worker registration (PWA install) */
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
+  window.addEventListener('load', async () => {
+    try {
+      await navigator.serviceWorker.register('./sw.js');
+      console.log('Service worker registered');
+    } catch (err) {
+      console.error('SW registration failed', err);
+    }
   });
 }
+
+/* WORKING PWA INSTALL */
+let deferredPrompt;
+const installBtn = document.getElementById('installTrigger');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  if (installBtn) {
+    installBtn.classList.add('show');
+  }
+});
+
+window.__diagroOpenInstall = async function () {
+  if (!deferredPrompt) {
+    alert('Installation is not available yet. Please use Chrome or Edge and refresh the page.');
+    return;
+  }
+
+  deferredPrompt.prompt();
+
+  const { outcome } = await deferredPrompt.userChoice;
+
+  console.log('Install result:', outcome);
+
+  deferredPrompt = null;
+
+  if (installBtn) {
+    installBtn.style.display = 'none';
+  }
+};
+
+window.addEventListener('appinstalled', () => {
+  console.log('PWA installed successfully');
+  if (installBtn) {
+    installBtn.style.display = 'none';
+  }
+});
 
 function showFarmPanel(id, btn) {
   document.querySelectorAll('#screen-my-farm .tool-panel').forEach(p => p.classList.remove('active'));
