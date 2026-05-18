@@ -91,8 +91,8 @@ body {
 .notif-dot[data-count]:not([data-count="0"])::after { content:attr(data-count); position:absolute; top:-4px; right:-4px; background:#e53935; color:white; font-size:9px; font-weight:700; border-radius:10px; padding:1px 4px; font-family:'DM Sans',sans-serif; min-width:14px; text-align:center; }
 .avatar-btn { width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--gold),#c89535); color:#1a1a1a; font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; letter-spacing:0.5px; box-shadow:0 2px 6px rgba(0,0,0,0.18); }
 .avatar-btn.empty { background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.9); border:1px dashed rgba(255,255,255,0.35); }
-.install-trigger { background:var(--gold); color:#1a1a1a; border:2px solid #fff; padding:7px 12px; border-radius:10px; font-size:12px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px; font-family:'DM Sans',sans-serif; box-shadow:0 0 0 0 rgba(212,168,83,0.7); animation:installPulse 2.2s ease-out infinite; }
-.install-trigger.show { display:inline-flex; } @keyframes installPulse{0%{box-shadow:0 0 0 0 rgba(212,168,83,0.65)}70%{box-shadow:0 0 0 12px rgba(212,168,83,0)}100%{box-shadow:0 0 0 0 rgba(212,168,83,0)}}
+.install-trigger { background:var(--gold); color:#1a1a1a; border:none; padding:6px 10px; border-radius:8px; font-size:11px; font-weight:700; cursor:pointer; display:none; align-items:center; gap:4px; font-family:'DM Sans',sans-serif; }
+.install-trigger.show { display:inline-flex; }
 .install-trigger:active { transform:scale(0.96); }
 /* Notifications drawer */
 .notif-drawer{ position:fixed; inset:0; background:rgba(10,15,11,0.55); z-index:9998; display:none; align-items:flex-start; justify-content:center; padding:60px 12px 0; }
@@ -125,12 +125,6 @@ body {
 .acct-btn{ flex:1; padding:12px; border-radius:10px; border:none; font-weight:700; font-size:13px; cursor:pointer; font-family:'DM Sans',sans-serif; }
 .acct-btn-primary{ background:var(--green); color:#fff; }
 .acct-btn-ghost{ background:transparent; color:var(--muted); }
-.acct-backdrop{ backdrop-filter:blur(6px); }
-.acct-locked #acctCancel{ display:none !important; }
-.acct-locked .acct-sub::after{ content:" You must create an account to use Di-Agro."; color:#1a3a1f; font-weight:700; display:block; margin-top:6px; }
-body.acct-gated > .app:not(.acct-modal):not(.acct-backdrop){ filter:blur(3px) brightness(0.85); pointer-events:none !important; user-select:none; }
-body.acct-gated .acct-backdrop, body.acct-gated .acct-modal{ filter:none !important; pointer-events:auto !important; }
-
 
 /* ── SCREEN CONTENT AREA ── */
 .screens-wrap {
@@ -695,19 +689,19 @@ textarea.fi { resize:none; }
         <div style="height:12px"></div>
 
         <div class="weather-main-card">
-          <div class="wm-loc" id="wmLoc">📍 Locating…</div>
-          <div class="wm-temp" id="wmTemp">--°C</div>
-          <div class="wm-cond" id="wmCond">Fetching live conditions…</div>
+          <div class="wm-loc">📍 Kampala, Central Uganda</div>
+          <div class="wm-temp">27°C</div>
+          <div class="wm-cond">⛅ Partly Cloudy — Light Winds</div>
           <div class="wm-details">
-            <div class="wm-detail"><div class="val" id="wmRain">--</div><div class="lbl">Rainfall</div></div>
-            <div class="wm-detail"><div class="val" id="wmHum">--</div><div class="lbl">Humidity</div></div>
-            <div class="wm-detail"><div class="val" id="wmWind">--</div><div class="lbl">Wind</div></div>
-            <div class="wm-detail"><div class="val" id="wmUv">--</div><div class="lbl">UV Index</div></div>
+            <div class="wm-detail"><div class="val">12mm</div><div class="lbl">Rainfall</div></div>
+            <div class="wm-detail"><div class="val">74%</div><div class="lbl">Humidity</div></div>
+            <div class="wm-detail"><div class="val">14km/h</div><div class="lbl">Wind</div></div>
+            <div class="wm-detail"><div class="val">6</div><div class="lbl">UV Index</div></div>
           </div>
         </div>
 
         <div class="section-label">// 7-Day Forecast</div>
-        <div class="forecast-strip" id="forecastStrip">
+        <div class="forecast-strip">
           <div class="fc-day today"><div class="fc-d">TODAY</div><div class="fc-emoji">⛅</div><div class="fc-hi">27°</div><div class="fc-lo">18°</div></div>
           <div class="fc-day"><div class="fc-d">MON</div><div class="fc-emoji">☀️</div><div class="fc-hi">29°</div><div class="fc-lo">19°</div></div>
           <div class="fc-day"><div class="fc-d">TUE</div><div class="fc-emoji">⛅</div><div class="fc-hi">27°</div><div class="fc-lo">18°</div></div>
@@ -1724,7 +1718,7 @@ renderLanguage();
     </div>
     <div style="padding:16px 20px 10px;border-bottom:1px solid var(--border)">
       <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">// Join the Community</div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--green);font-weight:700">Create Free Account</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--green);font-weight:700">Farmer Registration</div>
       <div style="font-size:12px;color:var(--muted);margin-top:3px">Join 50,000+ Ugandan farmers growing smarter.</div>
     </div>
     <div style="padding:18px 20px 10px" id="regFormWrap">
@@ -1748,7 +1742,7 @@ renderLanguage();
         </select>
       </div>
       <div style="margin-bottom:14px">
-        <label style="font-size:11px;font-weight:600;color:var(--text);display:block;margin-bottom:5px;letter-spacing:0.03em">Email Address</label>
+        <label style="font-size:11px;font-weight:600;color:var(--text);display:block;margin-bottom:5px;letter-spacing:0.03em">Email Address <span style="color:#e53935">*</span></label>
         <input id="reg_email" class="fi" type="email" placeholder="e.g. sarah@example.com" style="margin:0">
       </div>
       <div style="margin-bottom:6px">
@@ -1762,7 +1756,7 @@ renderLanguage();
       </div>
       <div id="regError" style="display:none;background:var(--red-bg);color:var(--red-text);font-size:12px;border-radius:var(--radius-sm);padding:9px 12px;margin-top:10px"></div>
       <button class="btn btn-primary" style="margin-top:16px;padding:13px;font-size:14px" onclick="submitRegistration()">🌿 Join MERAKI DI-AGRO — Free</button>
-      <button class="btn" style="margin-top:8px;background:transparent;color:var(--muted);font-size:12px;margin-bottom:8px" onclick="closeRegModal()">Maybe later</button>
+      <button id="regLaterBtn" class="btn" style="margin-top:8px;background:transparent;color:var(--muted);font-size:12px;margin-bottom:8px;display:none" onclick="closeRegModal()">Maybe later</button>
     </div>
     <div id="regSuccess" style="display:none;padding:32px 24px 28px;text-align:center">
       <div style="font-size:56px;margin-bottom:12px">🌿</div>
@@ -1800,31 +1794,35 @@ function submitRegistration() {
   var phone = document.getElementById('reg_phone').value.trim();
   if (!name) { showRegError('Please enter your full name.'); return; }
   if (!farming) { showRegError('Please select your type of farming.'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showRegError('Please enter a valid email address.'); return; }
   if (!phone) { showRegError('Please enter your contact / phone number.'); return; }
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showRegError('Please enter a valid email address.'); return; }
   document.getElementById('regError').style.display = 'none';
   var farmLabel = farming.replace(/^\S+\s/, '');
-  // Send to Google Sheets
   var btn = document.querySelector('#regFormWrap .btn-primary');
   var origText = btn ? btn.textContent : '';
   if(btn){ btn.textContent = 'Saving...'; btn.disabled = true; }
 
+  // Send to Google Sheet (jonathanoboi14@gmail.com) + email farmer via Apps Script
   fetch('https://script.google.com/macros/s/AKfycbxDr-Pj6gULk-220cKISYPmXq3PUs9SRsmkinNWBKlZ3TMT_MWgcGky9WRWPqF7nDkJ/exec', {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: name, farming: farmLabel, email: email || '', phone: '+256' + phone })
+    body: JSON.stringify({ name: name, farming: farmLabel, email: email, phone: '+256' + phone, source: 'MERAKI DI-AGRO PWA' })
   }).catch(function(){});
 
-  // Also send WhatsApp notification
-  var msg = encodeURIComponent(
-    '\ud83c\udf3f NEW MERAKI DI-AGRO REGISTRATION\n\n' +
-    '\ud83d\udc64 Name: ' + name + '\n' +
-    '\ud83c\udf3e Farming Type: ' + farmLabel + '\n' +
-    '\ud83d\udce7 Email: ' + (email || 'Not provided') + '\n' +
-    '\ud83d\udcde Phone: +256' + phone
-  );
-  window.open('https://wa.me/256758503931?text=' + msg, '_blank');
+  // Save account locally so the app unlocks and remembers the farmer
+  try {
+    localStorage.setItem('diagro_account_v1', JSON.stringify({
+      name: name, region: '', email: email, phone: '+256' + phone, farming: farmLabel, createdAt: Date.now()
+    }));
+  } catch(e){}
+  if (window.__diagroApplyAccount) window.__diagroApplyAccount();
+  if (window.__diagroDropGate) window.__diagroDropGate();
+  if (window.__diagroPushNotif) window.__diagroPushNotif({ icon:'✅', title:'Welcome, ' + name.split(/\s+/)[0] + '!', text:'A confirmation has been sent to ' + email + '.' });
+
+  // WhatsApp courtesy ping (opens in new tab; non-blocking)
+  var msg = encodeURIComponent('\ud83c\udf3f NEW MERAKI DI-AGRO REGISTRATION\n\n\ud83d\udc64 ' + name + '\n\ud83c\udf3e ' + farmLabel + '\n\ud83d\udce7 ' + email + '\n\ud83d\udcde +256' + phone);
+  try { window.open('https://wa.me/256758503931?text=' + msg, '_blank'); } catch(e){}
 
   if(btn){ btn.textContent = origText; btn.disabled = false; }
   document.getElementById('regFormWrap').style.display = 'none';
@@ -2020,21 +2018,12 @@ document.getElementById('regModal').addEventListener('click', function(e) {
 <!-- ═══════════════════════════════════
      ACCOUNT MODAL + NOTIFICATIONS DRAWER
 ═══════════════════════════════════ -->
-<div class="acct-backdrop" id="acctBackdrop" role="dialog" aria-modal="true">
-  <div class="acct-modal">
-    <div class="acct-icon">🌾</div>
-    <h2 class="acct-title" id="acctTitle">Create your farmer account</h2>
-    <p class="acct-sub" id="acctSub">Your name powers personal greetings, alerts and saved fields. Stored on your device — no email needed.</p>
-    <label for="acctName">Full name</label>
-    <input id="acctName" type="text" placeholder="e.g. Sarah Namuli" autocomplete="name" maxlength="60" />
-    <label for="acctRegion">Region (optional)</label>
-    <input id="acctRegion" type="text" placeholder="e.g. Kampala, Mbarara" maxlength="40" />
-    <div class="acct-actions">
-      <button class="acct-btn acct-btn-ghost" id="acctCancel">Not now</button>
-      <button class="acct-btn acct-btn-primary" id="acctSave">Save</button>
-    </div>
-  </div>
-</div>
+<style>
+  body.acct-gated > *:not(#regModal):not(.acct-gate-overlay){ filter: blur(6px) saturate(0.85); pointer-events:none !important; user-select:none; }
+  .acct-gate-overlay{ position:fixed; inset:0; background:rgba(10,15,11,0.55); z-index:99998; }
+  body:not(.acct-gated) .acct-gate-overlay{ display:none; }
+</style>
+<div class="acct-gate-overlay" id="acctGateOverlay"></div>
 
 <div class="notif-drawer" id="notifDrawer" role="dialog" aria-modal="true">
   <div class="notif-panel">
@@ -2051,11 +2040,8 @@ document.getElementById('regModal').addEventListener('click', function(e) {
 
 <script>
 (function(){
-  // ───────── Account (initials) ─────────
+  // ───────── Account gate ─────────
   const KEY = 'diagro_account_v1';
-  const acct = document.getElementById('acctBackdrop');
-  const nameI = document.getElementById('acctName');
-  const regI = document.getElementById('acctRegion');
   const greetingTag = document.getElementById('greetingTag');
   const greetingLoc = document.getElementById('greetingLocation');
   const avatarBtn = document.getElementById('avatarBtn');
@@ -2063,72 +2049,65 @@ document.getElementById('regModal').addEventListener('click', function(e) {
   function initialsOf(name){
     return String(name||'').trim().split(/\s+/).filter(Boolean).slice(0,2).map(s=>s[0].toUpperCase()).join('') || '+';
   }
-  function load(){
-    try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch(e){ return null; }
-  }
-  function save(v){
-    try { localStorage.setItem(KEY, JSON.stringify(v)); } catch(e){}
-  }
-  function applyAccount(a){
-    if (!a || !a.name){
-      avatarBtn.textContent = '+';
-      avatarBtn.classList.add('empty');
-      return;
-    }
-    const ini = initialsOf(a.name);
-    avatarBtn.textContent = ini;
-    avatarBtn.classList.remove('empty');
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch(e){ return null; } }
+  function applyAccount(){
+    const a = load();
+    if (!a || !a.name){ if(avatarBtn){ avatarBtn.textContent='+'; avatarBtn.classList.add('empty'); } return; }
+    if (avatarBtn){ avatarBtn.textContent = initialsOf(a.name); avatarBtn.classList.remove('empty'); }
     const first = a.name.trim().split(/\s+/)[0];
     if (greetingTag) greetingTag.textContent = 'Hello, ' + first;
     if (a.region && greetingLoc) greetingLoc.textContent = '📍 ' + a.region;
   }
-  function openAcct(){
-    const cur = load();
-    if (cur){ nameI.value = cur.name || ''; regI.value = cur.region || ''; }
-    document.getElementById('acctTitle').textContent = cur ? 'Update your account' : 'Create your farmer account';
-    acct.classList.add('show');
-    setTimeout(()=>nameI.focus(), 50);
-  }
-  function closeAcct(){ acct.classList.remove('show'); }
-  document.getElementById('acctCancel').addEventListener('click', () => { if (load()) closeAcct(); });
-  acct.addEventListener('click', e => { if (e.target === acct && load()) closeAcct(); });
-  document.getElementById('acctSave').addEventListener('click', () => {
-    const name = nameI.value.trim();
-    if (!name){ nameI.focus(); nameI.style.borderColor = '#e53935'; return; }
-    const region = regI.value.trim();
-    const next = { name, region, createdAt: Date.now() };
-    save(next);
-    applyAccount(next);
-    document.body.classList.remove('acct-gated');
-    acct.classList.remove('acct-locked');
-    acct.classList.remove('show');
-    window.__diagroPushNotif({ icon:'✅', title:'Welcome to Di-Agro, ' + name.split(/\s+/)[0] + '!', text:'Your account is ready. Tap the bell anytime for alerts.' });
-    // Ask for notification permission right after signup
-    if ('Notification' in window && Notification.permission === 'default') {
-      try { Notification.requestPermission(); } catch(e){}
-    }
-  });
-  window.__diagroOpenAccount = openAcct;
-
-  // GATE: block the entire app until an account exists.
-  const existing = load();
-  applyAccount(existing);
   function enforceGate(){
     if (!load()){
       document.body.classList.add('acct-gated');
-      acct.classList.add('show','acct-locked');
-      setTimeout(()=>nameI && nameI.focus(), 80);
-    } else {
-      document.body.classList.remove('acct-gated');
-      acct.classList.remove('acct-locked');
+      var laterBtn = document.getElementById('regLaterBtn');
+      if (laterBtn) laterBtn.style.display = 'none';
+      if (typeof openRegModal === 'function') openRegModal();
     }
   }
+  function dropGate(){ document.body.classList.remove('acct-gated'); }
+  window.__diagroApplyAccount = applyAccount;
+  window.__diagroDropGate = dropGate;
+  window.__diagroOpenAccount = function(){ if (typeof openRegModal === 'function') openRegModal(); };
+
+  applyAccount();
   enforceGate();
-  // Re-assert if anything tries to close it
-  const _origClose = closeAcct;
-  closeAcct = function(){ if (load()) _origClose(); else enforceGate(); };
-  // Keep watching: if account is cleared, re-gate.
-  setInterval(enforceGate, 1500);
+
+  // ───────── Notifications ─────────
+  const NKEY = 'diagro_notifs_v1';
+  const drawer = document.getElementById('notifDrawer');
+  const listEl = document.getElementById('notifList');
+  const bell = document.getElementById('notifBtn');
+
+  function loadNotifs(){ try { return JSON.parse(localStorage.getItem(NKEY) || '[]'); } catch(e){ return []; } }
+  function saveNotifs(list){ try { localStorage.setItem(NKEY, JSON.stringify(list.slice(0,50))); } catch(e){} }
+  function timeAgo(ts){
+    const s = Math.floor((Date.now()-ts)/1000);
+    if (s < 60) return 'just now';
+    if (s < 3600) return Math.floor(s/60)+'m ago';
+    if (s < 86400) return Math.floor(s/3600)+'h ago';
+    return Math.floor(s/86400)+'d ago';
+  }
+  function render(){
+    const list = loadNotifs();
+    const unread = list.filter(n => !n.read).length;
+    if (bell) bell.setAttribute('data-count', String(unread));
+    if (!list.length){
+      if (listEl) listEl.innerHTML = '<div class="notif-empty">You\'re all caught up. New alerts will appear here.</div>';
+      return;
+    }
+    if (listEl) listEl.innerHTML = list.map(n => `
+      <div class="notif-item ${n.read ? '' : 'unread'}" data-id="${n.id}">
+        <div class="notif-ico">${n.icon || '🔔'}</div>
+        <div class="notif-body">
+          <div class="notif-title">${n.title.replace(/</g,'&lt;')}</div>
+          <div class="notif-text">${(n.text||'').replace(/</g,'&lt;')}</div>
+          <div class="notif-time">${timeAgo(n.ts)}</div>
+        </div>
+      </div>
+    `).join('');
+  }
 
   // ───────── Notifications ─────────
   const NKEY = 'diagro_notifs_v1';
@@ -2247,102 +2226,6 @@ document.getElementById('regModal').addEventListener('click', function(e) {
       sub.textContent = err.code === 1 ? 'Permission denied. Enable location in browser settings.' : (err.message || 'Try again outdoors.');
     }, { enableHighAccuracy:true, timeout:15000, maximumAge:60000 });
   };
-})();
-</script>
-
-
-<script>
-/* === Live weather via Open-Meteo (no API key) === */
-(function(){
-  const EMOJI = { 0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',
-    61:'🌧️',63:'🌧️',65:'🌧️',66:'🌧️',67:'🌧️',71:'🌨️',73:'🌨️',75:'❄️',77:'❄️',
-    80:'🌦️',81:'🌧️',82:'⛈️',85:'🌨️',86:'❄️',95:'⛈️',96:'⛈️',99:'⛈️' };
-  const COND = { 0:'Clear sky',1:'Mostly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',48:'Rime fog',
-    51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',
-    66:'Freezing rain',67:'Freezing rain',71:'Light snow',73:'Snow',75:'Heavy snow',77:'Snow grains',
-    80:'Rain showers',81:'Rain showers',82:'Violent showers',85:'Snow showers',86:'Heavy snow',
-    95:'Thunderstorm',96:'Thunderstorm + hail',99:'Severe thunderstorm' };
-  const DAYS = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  const $ = id => document.getElementById(id);
-
-  function setLoc(lat, lon, label){
-    if ($('wmLoc')) $('wmLoc').textContent = '📍 ' + (label || (lat.toFixed(2)+', '+lon.toFixed(2)));
-  }
-
-  async function reverseGeocode(lat, lon){
-    try{
-      const r = await fetch('https://geocoding-api.open-meteo.com/v1/reverse?latitude='+lat+'&longitude='+lon+'&count=1&language=en');
-      const j = await r.json();
-      const g = j && j.results && j.results[0];
-      if (g) return [g.name, g.admin1].filter(Boolean).join(', ');
-    }catch(e){}
-    return null;
-  }
-
-  async function loadWeather(lat, lon, label){
-    setLoc(lat, lon, label || 'Locating…');
-    try{
-      const url = 'https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+
-        '&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,precipitation,uv_index'+
-        '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,uv_index_max'+
-        '&forecast_days=7&timezone=auto&wind_speed_unit=kmh';
-      const r = await fetch(url);
-      const j = await r.json();
-      const c = j.current || {};
-      const code = c.weather_code;
-      if ($('wmTemp')) $('wmTemp').textContent = Math.round(c.temperature_2m) + '°C';
-      if ($('wmCond')) $('wmCond').textContent = (EMOJI[code]||'⛅') + ' ' + (COND[code]||'—');
-      if ($('wmRain')) $('wmRain').textContent = (c.precipitation ?? 0) + 'mm';
-      if ($('wmHum'))  $('wmHum').textContent  = Math.round(c.relative_humidity_2m) + '%';
-      if ($('wmWind')) $('wmWind').textContent = Math.round(c.wind_speed_10m) + 'km/h';
-      if ($('wmUv'))   $('wmUv').textContent   = Math.round(c.uv_index ?? (j.daily && j.daily.uv_index_max && j.daily.uv_index_max[0]) ?? 0);
-
-      // Reverse-geocode in background
-      if (!label){
-        reverseGeocode(lat, lon).then(name => { if (name) setLoc(lat, lon, name); });
-      }
-
-      // 7-day strip
-      const strip = $('forecastStrip');
-      if (strip && j.daily && j.daily.time){
-        const today = new Date();
-        let html = '';
-        for (let i=0; i<j.daily.time.length; i++){
-          const d = new Date(j.daily.time[i] + 'T00:00');
-          const label = i===0 ? 'TODAY' : DAYS[d.getDay()];
-          const wc = j.daily.weather_code[i];
-          html += '<div class="fc-day'+(i===0?' today':'')+'">'+
-            '<div class="fc-d">'+label+'</div>'+
-            '<div class="fc-emoji">'+(EMOJI[wc]||'⛅')+'</div>'+
-            '<div class="fc-hi">'+Math.round(j.daily.temperature_2m_max[i])+'°</div>'+
-            '<div class="fc-lo">'+Math.round(j.daily.temperature_2m_min[i])+'°</div>'+
-            '</div>';
-        }
-        strip.innerHTML = html;
-      }
-    }catch(e){
-      if ($('wmCond')) $('wmCond').textContent = '⚠️ Could not fetch live weather';
-      console.warn('weather error', e);
-    }
-  }
-
-  function start(){
-    // Try saved account region first, else geolocation, else Kampala
-    const FALLBACK = { lat: 0.3476, lon: 32.5825, name: 'Kampala, Uganda' };
-    if (navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(
-        pos => loadWeather(pos.coords.latitude, pos.coords.longitude, null),
-        ()  => loadWeather(FALLBACK.lat, FALLBACK.lon, FALLBACK.name),
-        { timeout: 6000, maximumAge: 600000 }
-      );
-    } else {
-      loadWeather(FALLBACK.lat, FALLBACK.lon, FALLBACK.name);
-    }
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
-  else start();
-  // Refresh every 15 minutes
-  setInterval(start, 15*60*1000);
 })();
 </script>
 

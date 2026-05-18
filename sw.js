@@ -1,5 +1,5 @@
 // Di-Agro service worker — minimal, install-friendly, cache-safe.
-const CACHE = 'diagro-v2';
+const CACHE = 'diagro-v3';
 const CORE = [
   './',
   './index.html',
