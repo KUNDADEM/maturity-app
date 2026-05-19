@@ -2366,6 +2366,82 @@ loadWeather();
   window.addEventListener('pointercancel', onUp);
   btn.addEventListener('click', (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
 })();
+
+/* ============= INSTALL APP BUTTON ============= */
+(function(){
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  if (isStandalone) return; // already installed
+
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+  let deferredPrompt = null;
+
+  // Build button
+  const btn = document.createElement('button');
+  btn.id = 'installBtn';
+  btn.type = 'button';
+  btn.setAttribute('aria-label', 'Install Di-Agro app');
+  btn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Install App</span>';
+  Object.assign(btn.style, {
+    position:'fixed', bottom:'80px', left:'16px', zIndex:'9999',
+    display:'none', alignItems:'center', gap:'8px',
+    padding:'10px 14px', borderRadius:'999px', border:'none',
+    background:'linear-gradient(135deg,#1a3a1f,#2d6a35)', color:'#fff',
+    fontFamily:"'DM Sans',sans-serif", fontSize:'14px', fontWeight:'600',
+    boxShadow:'0 6px 20px rgba(26,58,31,0.4)', cursor:'pointer',
+    transition:'transform .2s, box-shadow .2s'
+  });
+  btn.onmouseenter = () => btn.style.transform = 'scale(1.05)';
+  btn.onmouseleave = () => btn.style.transform = 'scale(1)';
+  document.body.appendChild(btn);
+
+  // iOS instruction sheet
+  function showIOSHelp(){
+    const overlay = document.createElement('div');
+    Object.assign(overlay.style, {
+      position:'fixed', inset:'0', background:'rgba(0,0,0,0.55)', zIndex:'10000',
+      display:'flex', alignItems:'flex-end', justifyContent:'center', padding:'20px'
+    });
+    overlay.innerHTML = `
+      <div style="background:#fff;border-radius:18px;max-width:380px;width:100%;padding:22px;font-family:'DM Sans',sans-serif;box-shadow:0 -10px 40px rgba(0,0,0,0.3)">
+        <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#1a3a1f;margin-bottom:8px">Install Di-Agro</div>
+        <div style="font-size:14px;color:#5a7a5c;line-height:1.6;margin-bottom:16px">To install this app on your iPhone:</div>
+        <ol style="font-size:14px;color:#1e2e1f;line-height:1.8;padding-left:20px;margin-bottom:18px">
+          <li>Tap the <strong>Share</strong> button <span style="display:inline-block;vertical-align:-3px">⬆️</span> in Safari</li>
+          <li>Scroll and tap <strong>"Add to Home Screen"</strong></li>
+          <li>Tap <strong>Add</strong> in the top right</li>
+        </ol>
+        <button id="iosClose" style="width:100%;padding:12px;border:none;border-radius:10px;background:#1a3a1f;color:#fff;font-weight:600;font-size:14px;cursor:pointer">Got it</button>
+      </div>`;
+    document.body.appendChild(overlay);
+    overlay.querySelector('#iosClose').onclick = () => overlay.remove();
+    overlay.onclick = (e) => { if (e.target === overlay) overlay.remove(); };
+  }
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    btn.style.display = 'inline-flex';
+  });
+
+  window.addEventListener('appinstalled', () => {
+    btn.style.display = 'none';
+    deferredPrompt = null;
+  });
+
+  btn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') btn.style.display = 'none';
+      deferredPrompt = null;
+    } else if (isIOS) {
+      showIOSHelp();
+    }
+  });
+
+  // iOS: no beforeinstallprompt event — show button immediately
+  if (isIOS) btn.style.display = 'inline-flex';
+})();
 </script>
 
 </body>
