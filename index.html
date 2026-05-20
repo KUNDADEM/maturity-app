@@ -405,10 +405,9 @@ textarea.fi { resize:none; }
 .benefit-text p { font-size:11px; color:var(--muted); line-height:1.5; }
 
 /* WhatsApp float */
-.wa-float { position:fixed; bottom:80px; right:16px; z-index:9999; width:50px; height:50px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,0.4); transition:transform 0.2s, box-shadow 0.2s; touch-action:none; cursor:grab; user-select:none; -webkit-user-select:none; }
+.wa-float { position:fixed; bottom:80px; right:16px; z-index:9999; width:50px; height:50px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,0.4); transition:transform 0.2s; }
 .wa-float:hover { transform:scale(1.1); }
-.wa-float.dragging { cursor:grabbing; transition:none; box-shadow:0 8px 22px rgba(37,211,102,0.55); transform:scale(1.08); }
-.wa-float svg { width:26px; height:26px; fill:white; pointer-events:none; }
+.wa-float svg { width:26px; height:26px; fill:white; }
 .wa-pulse { position:absolute; width:50px; height:50px; border-radius:50%; background:rgba(37,211,102,0.35); animation:pulse 2s infinite; }
 @keyframes pulse { 0%{transform:scale(1);opacity:.7} 100%{transform:scale(1.8);opacity:0} }
 
@@ -669,36 +668,22 @@ textarea.fi { resize:none; }
           <div class="slider-dots" id="sliderDots"></div>
         </div>
 
-        <!-- WHY DIGITAL FARMING MATTERS (moved from Community) -->
-        <div style="padding:0 0 4px">
-          <div class="card" style="margin-top:12px">
-            <div class="card-title">Why Digital Farming Matters</div>
-            <div style="height:8px"></div>
-            <div class="benefit-item"><div class="benefit-icon">📈</div><div class="benefit-text"><h4>Up to 40% Higher Yields</h4><p>Data-driven decisions on planting, watering and harvesting consistently outperform traditional methods.</p></div></div>
-            <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text"><h4>Better Income for Farmers</h4><p>Direct market access and real-time pricing mean farmers get 20–35% more for their produce.</p></div></div>
-            <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text"><h4>Food Security for Uganda</h4><p>Smarter farming across Uganda's 134 districts means more food, less waste, and a resilient food system.</p></div></div>
-            <div class="benefit-item"><div class="benefit-icon">🏦</div><div class="benefit-text"><h4>Access to Credit</h4><p>Digital farm records make it easier to qualify for agricultural loans and insurance products.</p></div></div>
+        <!-- WHY DIGITAL FARMING (moved from Community) -->
+        <div class="card" style="margin-top:12px">
+          <div class="card-title">Why Digital Farming Matters</div>
+          <div style="height:8px"></div>
+          <div class="benefit-item"><div class="benefit-icon">📈</div><div class="benefit-text"><h4>Up to 40% Higher Yields</h4><p>Data-driven decisions on planting, watering and harvesting consistently outperform traditional methods.</p></div></div>
+          <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text"><h4>Better Income for Farmers</h4><p>Direct market access and real-time pricing mean farmers get 20–35% more for their produce.</p></div></div>
+          <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text"><h4>Food Security for Uganda</h4><p>Smarter farming across Uganda's 134 districts means more food, less waste, and a resilient food system.</p></div></div>
+          <div class="benefit-item"><div class="benefit-icon">🏦</div><div class="benefit-text"><h4>Access to Credit</h4><p>Digital farm records make it easier to qualify for agricultural loans and insurance products.</p></div></div>
+        </div>
+        <div class="card">
+          <div style="text-align:center;padding:12px 0">
+            <div style="font-family:'Playfair Display',serif;font-size:3rem;color:var(--green);font-weight:900;line-height:1">72%</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.6">of Ugandan farmers reported better crop decisions after accessing digital agricultural tools. <em>(MAAIF 2024)</em></div>
           </div>
-          <div class="card">
-            <div style="text-align:center;padding:12px 0">
-              <div style="font-family:'Playfair Display',serif;font-size:3rem;color:var(--green);font-weight:900;line-height:1">72%</div>
-              <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.6">of Ugandan farmers reported better crop decisions after accessing digital agricultural tools. <em>(MAAIF 2024)</em></div>
-            </div>
-            <div class="divider"></div>
-            <p style="font-size:11.5px;color:var(--muted);line-height:1.7">Agriculture employs over 70% of Uganda's workforce and contributes 24% of GDP. Digital farming bridges the gap — bringing weather forecasts, expert knowledge, financial services and market connectivity to every farmer's phone.</p>
-          </div>
-          <div class="knowledge-card">
-            <img class="kc-img" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80" alt="Precision Agriculture">
-            <div class="kc-body"><div class="kc-title">Precision Agriculture</div><div class="kc-desc">Use GPS mapping, drone imagery and satellite data to monitor crop health, soil moisture, and field variations in real time.</div></div>
-          </div>
-          <div class="knowledge-card">
-            <img class="kc-img" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Mobile Farming">
-            <div class="kc-body"><div class="kc-title">Mobile-First Farming</div><div class="kc-desc">Access all farming tools, alerts and market data directly on your mobile phone — works on basic smartphones with low data.</div></div>
-          </div>
-          <div class="knowledge-card">
-            <img class="kc-img" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&q=80" alt="Farm Analytics">
-            <div class="kc-body"><div class="kc-title">Farm Records & Analytics</div><div class="kc-desc">Keep digital records of inputs, yields and expenses. Track farm performance over seasons and generate reports for lenders.</div></div>
-          </div>
+          <div class="divider"></div>
+          <p style="font-size:11.5px;color:var(--muted);line-height:1.7">Agriculture employs over 70% of Uganda's workforce and contributes 24% of GDP. Digital farming bridges the gap — bringing weather forecasts, expert knowledge, financial services and market connectivity to every farmer's phone.</p>
         </div>
 
         <div class="cta-card">
@@ -721,28 +706,21 @@ textarea.fi { resize:none; }
 
         <div style="height:12px"></div>
 
-        <div class="weather-main-card">
-          <div class="wm-loc">📍 Kampala, Central Uganda</div>
-          <div class="wm-temp">27°C</div>
-          <div class="wm-cond">⛅ Partly Cloudy — Light Winds</div>
+        <div class="weather-main-card" id="weatherCard">
+          <div class="wm-loc" id="wmLoc">📍 Kampala, Central Uganda</div>
+          <div class="wm-temp" id="wmTemp">—°C</div>
+          <div class="wm-cond" id="wmCond">⏳ Fetching live weather…</div>
           <div class="wm-details">
-            <div class="wm-detail"><div class="val">12mm</div><div class="lbl">Rainfall</div></div>
-            <div class="wm-detail"><div class="val">74%</div><div class="lbl">Humidity</div></div>
-            <div class="wm-detail"><div class="val">14km/h</div><div class="lbl">Wind</div></div>
-            <div class="wm-detail"><div class="val">6</div><div class="lbl">UV Index</div></div>
+            <div class="wm-detail"><div class="val" id="wmRain">—</div><div class="lbl">Rainfall</div></div>
+            <div class="wm-detail"><div class="val" id="wmHum">—</div><div class="lbl">Humidity</div></div>
+            <div class="wm-detail"><div class="val" id="wmWind">—</div><div class="lbl">Wind</div></div>
+            <div class="wm-detail"><div class="val" id="wmUv">—</div><div class="lbl">UV Index</div></div>
           </div>
         </div>
 
-        <div class="section-label">// 7-Day Forecast</div>
-        <div class="forecast-strip">
-          <div class="fc-day today"><div class="fc-d">TODAY</div><div class="fc-emoji">⛅</div><div class="fc-hi">27°</div><div class="fc-lo">18°</div></div>
-          <div class="fc-day"><div class="fc-d">MON</div><div class="fc-emoji">☀️</div><div class="fc-hi">29°</div><div class="fc-lo">19°</div></div>
-          <div class="fc-day"><div class="fc-d">TUE</div><div class="fc-emoji">⛅</div><div class="fc-hi">27°</div><div class="fc-lo">18°</div></div>
-          <div class="fc-day"><div class="fc-d">WED</div><div class="fc-emoji">🌧️</div><div class="fc-hi">24°</div><div class="fc-lo">17°</div></div>
-          <div class="fc-day"><div class="fc-d">THU</div><div class="fc-emoji">🌦️</div><div class="fc-hi">25°</div><div class="fc-lo">17°</div></div>
-          <div class="fc-day"><div class="fc-d">FRI</div><div class="fc-emoji">☀️</div><div class="fc-hi">30°</div><div class="fc-lo">20°</div></div>
-          <div class="fc-day"><div class="fc-d">SAT</div><div class="fc-emoji">⛅</div><div class="fc-hi">28°</div><div class="fc-lo">19°</div></div>
-          <div class="fc-day"><div class="fc-d">SUN</div><div class="fc-emoji">🌧️</div><div class="fc-hi">23°</div><div class="fc-lo">16°</div></div>
+        <div class="section-label">// 7-Day Forecast <span id="wmUpdated" style="float:right;font-weight:400;opacity:0.6"></span></div>
+        <div class="forecast-strip" id="forecastStrip">
+          <div class="fc-day today"><div class="fc-d">TODAY</div><div class="fc-emoji">⏳</div><div class="fc-hi">—</div><div class="fc-lo">—</div></div>
         </div>
 
         <div class="section-label">// Active Pest & Disease Alerts</div>
@@ -1115,17 +1093,18 @@ textarea.fi { resize:none; }
         <!-- FARMING METHODS -->
         <div class="tool-panel" id="cp-methods">
           <div style="height:12px"></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80&auto=format&fit=crop" alt="Organic farming with compost and rows of leafy vegetables"><div class="tc-text"><h3>Organic Farming</h3><p>Farm without synthetic chemicals using natural compost, biological pest control and crop rotation.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1583878539414-eb1da7b6404d?w=600&q=80&auto=format&fit=crop" alt="Stepped rice terraces on a hillside"><div class="tc-text"><h3>Terrace Farming</h3><p>Grow on hillside terraces to prevent erosion — ideal for Uganda's hilly Kigezi and Rwenzori regions.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80&auto=format&fit=crop" alt="Aquaponic tank growing vegetables above fish"><div class="tc-text"><h3>Aquaponics</h3><p>Combine fish farming and vegetables in a closed-loop system using 90% less water.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&q=80&auto=format&fit=crop" alt="Indoor vertical farm with stacked grow racks"><div class="tc-text"><h3>Vertical Farming</h3><p>Grow crops in stacked layers indoors — perfect for urban Kampala, Jinja, and Entebbe.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600&q=80&auto=format&fit=crop" alt="Hydroponic lettuce growing in nutrient water channels"><div class="tc-text"><h3>Hydroponics</h3><p>Soil-free growing with nutrient-rich water. Produces 3–10× more yield in the same space.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80&auto=format&fit=crop" alt="Mixed farm with crops, livestock and trees"><div class="tc-text"><h3>Integrated Farming</h3><p>Combine crops, livestock and trees on one farm for maximum productivity all year round.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80&auto=format&fit=crop" alt="Drought-tolerant farm with rainwater harvesting tanks"><div class="tc-text"><h3>Climate-Smart Farming</h3><p>Adapt to Uganda's changing rainfall using drought-tolerant seeds and water harvesting.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1530507629858-e3759c2c9e9c?w=600&q=80&auto=format&fit=crop" alt="Agroforestry — crops growing among shade trees"><div class="tc-text"><h3>Agroforestry</h3><p>Grow crops among trees for shade, soil health, and an extra income from timber or fruit.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770faae9?w=800&q=80&auto=format&fit=crop" alt="Organic vegetable rows with compost mulch"><div class="tc-text"><h3>Organic Farming</h3><p>Farm without synthetic chemicals using natural compost, biological pest control and crop rotation.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1543782942-a05d4d50a9aa?w=800&q=80&auto=format&fit=crop" alt="Stepped rice terraces on a hillside"><div class="tc-text"><h3>Terrace Farming</h3><p>Grow on hillside terraces to prevent erosion — ideal for Uganda's hilly Kigezi and Rwenzori regions.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=800&q=80&auto=format&fit=crop" alt="Aquaponics system with fish tank feeding plant grow bed"><div class="tc-text"><h3>Aquaponics</h3><p>Combine fish farming and vegetables in a closed-loop system using 90% less water.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80&auto=format&fit=crop" alt="Indoor vertical farm with stacked grow racks under LED light"><div class="tc-text"><h3>Vertical Farming</h3><p>Grow crops in stacked layers indoors — perfect for urban Kampala, Jinja, and Entebbe.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=800&q=80&auto=format&fit=crop" alt="Hydroponic lettuce growing in nutrient water channels"><div class="tc-text"><h3>Hydroponics</h3><p>Soil-free growing with nutrient-rich water. Produces 3–10× more yield in the same space.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80&auto=format&fit=crop" alt="Mixed smallholder farm with crops and grazing livestock"><div class="tc-text"><h3>Integrated Farming</h3><p>Combine crops, livestock and trees on one farm for maximum productivity all year round.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80&auto=format&fit=crop" alt="Drip irrigation lines watering drought-tolerant crops"><div class="tc-text"><h3>Climate-Smart Farming</h3><p>Adapt to Uganda's changing rainfall using drought-tolerant seeds and water harvesting.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1597916829826-02e5bb4a54e0?w=800&q=80&auto=format&fit=crop" alt="Coffee shrubs growing under shade trees in an agroforestry plot"><div class="tc-text"><h3>Agroforestry</h3><p>Grow crops among trees for shade, soil health, and an extra income from timber or fruit.</p></div></div>
         </div>
 
-        <!-- WHY DIGITAL (moved to Home tab) -->
+
+
 
         <!-- LANGUAGE -->
         <div class="tool-panel" id="cp-lang">
@@ -1177,7 +1156,7 @@ textarea.fi { resize:none; }
 </div><!-- /app-shell -->
 
 <!-- WhatsApp Float -->
-<a id="waFloat" class="wa-float" href="https://wa.me/256758503931?text=Hello%20MERAKI%20DI-AGRO%2C%20I%20need%20farming%20assistance." target="_blank" rel="noopener" aria-label="Chat on WhatsApp (drag to move)">
+<a class="wa-float" href="https://wa.me/256758503931?text=Hello%20MERAKI%20DI-AGRO%2C%20I%20need%20farming%20assistance." target="_blank" rel="noopener">
   <span class="wa-pulse"></span>
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.822.736 5.476 2.027 7.782L0 32l8.456-2.007A15.934 15.934 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.28 13.28 0 01-6.781-1.854l-.486-.29-5.021 1.193 1.215-4.895-.317-.502A13.252 13.252 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.953c-.398-.199-2.354-1.162-2.72-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.262 1.56-.232.265-.465.298-.863.099-.398-.199-1.681-.619-3.202-1.977-1.183-1.057-1.981-2.362-2.213-2.76-.232-.398-.025-.613.175-.811.18-.179.398-.465.597-.698.199-.232.265-.398.398-.664.133-.265.066-.498-.033-.697-.1-.199-.896-2.16-1.228-2.958-.323-.777-.651-.672-.896-.684l-.764-.013c-.265 0-.697.099-1.062.498-.365.398-1.394 1.362-1.394 3.322s1.427 3.853 1.626 4.118c.199.265 2.808 4.287 6.806 6.013.951.411 1.693.657 2.272.841.954.304 1.823.261 2.51.158.765-.114 2.354-.963 2.686-1.893.332-.93.332-1.727.232-1.893-.099-.166-.365-.265-.763-.464z"/></svg>
 </a>
@@ -1224,54 +1203,10 @@ window.addEventListener('DOMContentLoaded', routeFromHash);
 
 /* Service worker registration (PWA install) */
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', async () => {
-    try {
-      await navigator.serviceWorker.register('./sw.js');
-      console.log('Service worker registered');
-    } catch (err) {
-      console.error('SW registration failed', err);
-    }
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
   });
 }
-
-/* WORKING PWA INSTALL */
-let deferredPrompt;
-const installBtn = document.getElementById('installTrigger');
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-
-  if (installBtn) {
-    installBtn.classList.add('show');
-  }
-});
-
-window.__diagroOpenInstall = async function () {
-  if (!deferredPrompt) {
-    alert('Installation is not available yet. Please use Chrome or Edge and refresh the page.');
-    return;
-  }
-
-  deferredPrompt.prompt();
-
-  const { outcome } = await deferredPrompt.userChoice;
-
-  console.log('Install result:', outcome);
-
-  deferredPrompt = null;
-
-  if (installBtn) {
-    installBtn.style.display = 'none';
-  }
-};
-
-window.addEventListener('appinstalled', () => {
-  console.log('PWA installed successfully');
-  if (installBtn) {
-    installBtn.style.display = 'none';
-  }
-});
 
 function showFarmPanel(id, btn) {
   document.querySelectorAll('#screen-my-farm .tool-panel').forEach(p => p.classList.remove('active'));
@@ -1764,7 +1699,7 @@ renderLanguage();
     </div>
     <div style="padding:16px 20px 10px;border-bottom:1px solid var(--border)">
       <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">// Join the Community</div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--green);font-weight:700">Farmer Registration</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--green);font-weight:700">Create Free Account</div>
       <div style="font-size:12px;color:var(--muted);margin-top:3px">Join 50,000+ Ugandan farmers growing smarter.</div>
     </div>
     <div style="padding:18px 20px 10px" id="regFormWrap">
@@ -1788,7 +1723,7 @@ renderLanguage();
         </select>
       </div>
       <div style="margin-bottom:14px">
-        <label style="font-size:11px;font-weight:600;color:var(--text);display:block;margin-bottom:5px;letter-spacing:0.03em">Email Address <span style="color:#e53935">*</span></label>
+        <label style="font-size:11px;font-weight:600;color:var(--text);display:block;margin-bottom:5px;letter-spacing:0.03em">Email Address</label>
         <input id="reg_email" class="fi" type="email" placeholder="e.g. sarah@example.com" style="margin:0">
       </div>
       <div style="margin-bottom:6px">
@@ -1802,7 +1737,7 @@ renderLanguage();
       </div>
       <div id="regError" style="display:none;background:var(--red-bg);color:var(--red-text);font-size:12px;border-radius:var(--radius-sm);padding:9px 12px;margin-top:10px"></div>
       <button class="btn btn-primary" style="margin-top:16px;padding:13px;font-size:14px" onclick="submitRegistration()">🌿 Join MERAKI DI-AGRO — Free</button>
-      <button id="regLaterBtn" class="btn" style="margin-top:8px;background:transparent;color:var(--muted);font-size:12px;margin-bottom:8px;display:none" onclick="closeRegModal()">Maybe later</button>
+      <button class="btn" style="margin-top:8px;background:transparent;color:var(--muted);font-size:12px;margin-bottom:8px" onclick="closeRegModal()">Maybe later</button>
     </div>
     <div id="regSuccess" style="display:none;padding:32px 24px 28px;text-align:center">
       <div style="font-size:56px;margin-bottom:12px">🌿</div>
@@ -1840,35 +1775,31 @@ function submitRegistration() {
   var phone = document.getElementById('reg_phone').value.trim();
   if (!name) { showRegError('Please enter your full name.'); return; }
   if (!farming) { showRegError('Please select your type of farming.'); return; }
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showRegError('Please enter a valid email address.'); return; }
   if (!phone) { showRegError('Please enter your contact / phone number.'); return; }
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showRegError('Please enter a valid email address.'); return; }
   document.getElementById('regError').style.display = 'none';
   var farmLabel = farming.replace(/^\S+\s/, '');
+  // Send to Google Sheets
   var btn = document.querySelector('#regFormWrap .btn-primary');
   var origText = btn ? btn.textContent : '';
   if(btn){ btn.textContent = 'Saving...'; btn.disabled = true; }
 
-  // Send to Google Sheet (jonathanoboi14@gmail.com) + email farmer via Apps Script
   fetch('https://script.google.com/macros/s/AKfycbxDr-Pj6gULk-220cKISYPmXq3PUs9SRsmkinNWBKlZ3TMT_MWgcGky9WRWPqF7nDkJ/exec', {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: name, farming: farmLabel, email: email, phone: '+256' + phone, source: 'MERAKI DI-AGRO PWA' })
+    body: JSON.stringify({ name: name, farming: farmLabel, email: email || '', phone: '+256' + phone })
   }).catch(function(){});
 
-  // Save account locally so the app unlocks and remembers the farmer
-  try {
-    localStorage.setItem('diagro_account_v1', JSON.stringify({
-      name: name, region: '', email: email, phone: '+256' + phone, farming: farmLabel, createdAt: Date.now()
-    }));
-  } catch(e){}
-  if (window.__diagroApplyAccount) window.__diagroApplyAccount();
-  if (window.__diagroDropGate) window.__diagroDropGate();
-  if (window.__diagroPushNotif) window.__diagroPushNotif({ icon:'✅', title:'Welcome, ' + name.split(/\s+/)[0] + '!', text:'A confirmation has been sent to ' + email + '.' });
-
-  // WhatsApp courtesy ping (opens in new tab; non-blocking)
-  var msg = encodeURIComponent('\ud83c\udf3f NEW MERAKI DI-AGRO REGISTRATION\n\n\ud83d\udc64 ' + name + '\n\ud83c\udf3e ' + farmLabel + '\n\ud83d\udce7 ' + email + '\n\ud83d\udcde +256' + phone);
-  try { window.open('https://wa.me/256758503931?text=' + msg, '_blank'); } catch(e){}
+  // Also send WhatsApp notification
+  var msg = encodeURIComponent(
+    '\ud83c\udf3f NEW MERAKI DI-AGRO REGISTRATION\n\n' +
+    '\ud83d\udc64 Name: ' + name + '\n' +
+    '\ud83c\udf3e Farming Type: ' + farmLabel + '\n' +
+    '\ud83d\udce7 Email: ' + (email || 'Not provided') + '\n' +
+    '\ud83d\udcde Phone: +256' + phone
+  );
+  window.open('https://wa.me/256758503931?text=' + msg, '_blank');
 
   if(btn){ btn.textContent = origText; btn.disabled = false; }
   document.getElementById('regFormWrap').style.display = 'none';
@@ -2046,17 +1977,17 @@ document.getElementById('regModal').addEventListener('click', function(e) {
 
   // iOS Safari has no beforeinstallprompt — show manually after a short delay
   if (isIOS && isMobile) {
-    setTimeout(() => { if (!backdrop.classList.contains('show')) showPrompt(true); }, 1500);
+    setTimeout(() => { if (!backdrop.classList.contains('show')) showPrompt(true); }, 1200);
   }
 
-  // Android fallback: if beforeinstallprompt never fires within 4s but we're
-  // on a mobile browser, still surface a generic prompt the user can dismiss.
-  if (!isIOS && isMobile) {
+  // Android & desktop fallback: if beforeinstallprompt never fires within 2.5s
+  // still surface a generic install/download prompt the user can dismiss.
+  if (!isIOS) {
     setTimeout(() => {
       if (!backdrop.classList.contains('show') && !deferredPrompt) {
-        if ('serviceWorker' in navigator) showPrompt(false);
+        showPrompt(false);
       }
-    }, 4000);
+    }, 2500);
   }
 })();
 </script>
@@ -2064,12 +1995,21 @@ document.getElementById('regModal').addEventListener('click', function(e) {
 <!-- ═══════════════════════════════════
      ACCOUNT MODAL + NOTIFICATIONS DRAWER
 ═══════════════════════════════════ -->
-<style>
-  body.acct-gated > *:not(#regModal):not(.acct-gate-overlay){ filter: blur(6px) saturate(0.85); pointer-events:none !important; user-select:none; }
-  .acct-gate-overlay{ position:fixed; inset:0; background:rgba(10,15,11,0.55); z-index:99998; }
-  body:not(.acct-gated) .acct-gate-overlay{ display:none; }
-</style>
-<div class="acct-gate-overlay" id="acctGateOverlay"></div>
+<div class="acct-backdrop" id="acctBackdrop" role="dialog" aria-modal="true">
+  <div class="acct-modal">
+    <div class="acct-icon">🌾</div>
+    <h2 class="acct-title" id="acctTitle">Create your farmer account</h2>
+    <p class="acct-sub" id="acctSub">Your name powers personal greetings, alerts and saved fields. Stored on your device — no email needed.</p>
+    <label for="acctName">Full name</label>
+    <input id="acctName" type="text" placeholder="e.g. Sarah Namuli" autocomplete="name" maxlength="60" />
+    <label for="acctRegion">Region (optional)</label>
+    <input id="acctRegion" type="text" placeholder="e.g. Kampala, Mbarara" maxlength="40" />
+    <div class="acct-actions">
+      <button class="acct-btn acct-btn-ghost" id="acctCancel">Not now</button>
+      <button class="acct-btn acct-btn-primary" id="acctSave">Save</button>
+    </div>
+  </div>
+</div>
 
 <div class="notif-drawer" id="notifDrawer" role="dialog" aria-modal="true">
   <div class="notif-panel">
@@ -2086,8 +2026,11 @@ document.getElementById('regModal').addEventListener('click', function(e) {
 
 <script>
 (function(){
-  // ───────── Account gate ─────────
+  // ───────── Account (initials) ─────────
   const KEY = 'diagro_account_v1';
+  const acct = document.getElementById('acctBackdrop');
+  const nameI = document.getElementById('acctName');
+  const regI = document.getElementById('acctRegion');
   const greetingTag = document.getElementById('greetingTag');
   const greetingLoc = document.getElementById('greetingLocation');
   const avatarBtn = document.getElementById('avatarBtn');
@@ -2095,65 +2038,54 @@ document.getElementById('regModal').addEventListener('click', function(e) {
   function initialsOf(name){
     return String(name||'').trim().split(/\s+/).filter(Boolean).slice(0,2).map(s=>s[0].toUpperCase()).join('') || '+';
   }
-  function load(){ try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch(e){ return null; } }
-  function applyAccount(){
-    const a = load();
-    if (!a || !a.name){ if(avatarBtn){ avatarBtn.textContent='+'; avatarBtn.classList.add('empty'); } return; }
-    if (avatarBtn){ avatarBtn.textContent = initialsOf(a.name); avatarBtn.classList.remove('empty'); }
+  function load(){
+    try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch(e){ return null; }
+  }
+  function save(v){
+    try { localStorage.setItem(KEY, JSON.stringify(v)); } catch(e){}
+  }
+  function applyAccount(a){
+    if (!a || !a.name){
+      avatarBtn.textContent = '+';
+      avatarBtn.classList.add('empty');
+      return;
+    }
+    const ini = initialsOf(a.name);
+    avatarBtn.textContent = ini;
+    avatarBtn.classList.remove('empty');
     const first = a.name.trim().split(/\s+/)[0];
     if (greetingTag) greetingTag.textContent = 'Hello, ' + first;
     if (a.region && greetingLoc) greetingLoc.textContent = '📍 ' + a.region;
   }
-  function enforceGate(){
-    if (!load()){
-      document.body.classList.add('acct-gated');
-      var laterBtn = document.getElementById('regLaterBtn');
-      if (laterBtn) laterBtn.style.display = 'none';
-      if (typeof openRegModal === 'function') openRegModal();
+  function openAcct(){
+    const cur = load();
+    if (cur){ nameI.value = cur.name || ''; regI.value = cur.region || ''; }
+    document.getElementById('acctTitle').textContent = cur ? 'Update your account' : 'Create your farmer account';
+    acct.classList.add('show');
+    setTimeout(()=>nameI.focus(), 50);
+  }
+  function closeAcct(){ acct.classList.remove('show'); }
+  document.getElementById('acctCancel').addEventListener('click', closeAcct);
+  acct.addEventListener('click', e => { if (e.target === acct) closeAcct(); });
+  document.getElementById('acctSave').addEventListener('click', () => {
+    const name = nameI.value.trim();
+    if (!name){ nameI.focus(); nameI.style.borderColor = '#e53935'; return; }
+    const region = regI.value.trim();
+    const next = { name, region, createdAt: Date.now() };
+    save(next);
+    applyAccount(next);
+    closeAcct();
+    window.__diagroPushNotif({ icon:'✅', title:'Welcome to Di-Agro, ' + name.split(/\s+/)[0] + '!', text:'Your account is ready. Tap the bell anytime for alerts.' });
+    // Ask for notification permission right after signup
+    if ('Notification' in window && Notification.permission === 'default') {
+      try { Notification.requestPermission(); } catch(e){}
     }
-  }
-  function dropGate(){ document.body.classList.remove('acct-gated'); }
-  window.__diagroApplyAccount = applyAccount;
-  window.__diagroDropGate = dropGate;
-  window.__diagroOpenAccount = function(){ if (typeof openRegModal === 'function') openRegModal(); };
+  });
+  window.__diagroOpenAccount = openAcct;
 
-  applyAccount();
-  enforceGate();
-
-  // ───────── Notifications ─────────
-  const NKEY = 'diagro_notifs_v1';
-  const drawer = document.getElementById('notifDrawer');
-  const listEl = document.getElementById('notifList');
-  const bell = document.getElementById('notifBtn');
-
-  function loadNotifs(){ try { return JSON.parse(localStorage.getItem(NKEY) || '[]'); } catch(e){ return []; } }
-  function saveNotifs(list){ try { localStorage.setItem(NKEY, JSON.stringify(list.slice(0,50))); } catch(e){} }
-  function timeAgo(ts){
-    const s = Math.floor((Date.now()-ts)/1000);
-    if (s < 60) return 'just now';
-    if (s < 3600) return Math.floor(s/60)+'m ago';
-    if (s < 86400) return Math.floor(s/3600)+'h ago';
-    return Math.floor(s/86400)+'d ago';
-  }
-  function render(){
-    const list = loadNotifs();
-    const unread = list.filter(n => !n.read).length;
-    if (bell) bell.setAttribute('data-count', String(unread));
-    if (!list.length){
-      if (listEl) listEl.innerHTML = '<div class="notif-empty">You\'re all caught up. New alerts will appear here.</div>';
-      return;
-    }
-    if (listEl) listEl.innerHTML = list.map(n => `
-      <div class="notif-item ${n.read ? '' : 'unread'}" data-id="${n.id}">
-        <div class="notif-ico">${n.icon || '🔔'}</div>
-        <div class="notif-body">
-          <div class="notif-title">${n.title.replace(/</g,'&lt;')}</div>
-          <div class="notif-text">${(n.text||'').replace(/</g,'&lt;')}</div>
-          <div class="notif-time">${timeAgo(n.ts)}</div>
-        </div>
-      </div>
-    `).join('');
-  }
+  // Apply any existing account info to greeting (auth gate handles first-visit signup)
+  const existing = load();
+  applyAccount(existing);
 
   // ───────── Notifications ─────────
   const NKEY = 'diagro_notifs_v1';
@@ -2275,172 +2207,308 @@ document.getElementById('regModal').addEventListener('click', function(e) {
 })();
 </script>
 
+<!-- ═══════════════════════════════════
+     AUTH GATE — required to access app
+═══════════════════════════════════ -->
+<style>
+.auth-gate{position:fixed;inset:0;background:linear-gradient(160deg,#0b3d24,#0c447c);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;overflow-y:auto;font-family:inherit}
+.auth-gate.show{display:flex}
+.auth-gate.show ~ .app-shell, body.auth-locked .app-shell, body.auth-locked .wa-float{filter:blur(4px);pointer-events:none;user-select:none}
+.auth-card{width:100%;max-width:380px;background:#fff;border-radius:18px;padding:26px 22px;box-shadow:0 30px 80px rgba(0,0,0,0.4);max-height:95vh;overflow-y:auto}
+.auth-logo{font-family:'Playfair Display',serif;font-size:22px;color:#0b3d24;font-weight:800;text-align:center}
+.auth-logo small{display:block;font-family:'Space Mono',monospace;font-size:10px;color:#6b7280;text-transform:uppercase;letter-spacing:0.14em;font-weight:400;margin-top:4px}
+.auth-tag{font-size:13px;color:#4b5563;text-align:center;margin:10px 0 18px;line-height:1.5}
+.auth-tabs{display:flex;background:#f1f5f4;border-radius:10px;padding:4px;margin-bottom:16px}
+.auth-tab{flex:1;background:transparent;border:none;padding:10px;font-size:13px;font-weight:600;color:#6b7280;cursor:pointer;border-radius:7px;font-family:inherit;transition:all .15s}
+.auth-tab.active{background:#fff;color:#0b3d24;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+.auth-card label{display:block;font-size:11px;color:#374151;font-weight:600;margin:10px 0 4px;text-transform:uppercase;letter-spacing:0.06em}
+.auth-card input{width:100%;padding:11px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:#111}
+.auth-card input:focus{outline:none;border-color:#0b3d24;box-shadow:0 0 0 3px rgba(11,61,36,0.12)}
+.auth-err{color:#dc2626;font-size:12px;min-height:16px;margin:8px 0 0;text-align:center}
+.auth-submit{width:100%;background:#0b3d24;color:#fff;border:none;padding:13px;font-size:15px;font-weight:700;border-radius:10px;margin-top:14px;cursor:pointer;font-family:inherit;transition:transform .12s,opacity .15s}
+.auth-submit:active{transform:scale(0.97)}
+.auth-submit:disabled{opacity:0.6;cursor:not-allowed}
+.auth-note{font-size:11px;color:#9ca3af;text-align:center;margin-top:14px;line-height:1.5}
+.logout-link{display:block;width:100%;background:none;border:none;color:#dc2626;font-size:12px;text-align:center;margin-top:10px;cursor:pointer;font-family:inherit;text-decoration:underline}
+</style>
 
-<div id="weatherLive" style="padding:12px;font-size:14px"></div>
+<div class="auth-gate" id="authGate" role="dialog" aria-modal="true" aria-labelledby="authLogo">
+  <div class="auth-card">
+    <div class="auth-logo" id="authLogo">🌾 MERAKI DI-AGRO<small>Digital Farming Platform</small></div>
+    <p class="auth-tag" id="authTag">Create your account to access weather, market prices, alerts and the farmer forum.</p>
+    <div class="auth-tabs" role="tablist">
+      <button class="auth-tab active" data-mode="signup" type="button">Create account</button>
+      <button class="auth-tab" data-mode="signin" type="button">Sign in</button>
+    </div>
+    <form id="authForm" autocomplete="on" novalidate>
+      <div data-only="signup">
+        <label for="authName">Full name</label>
+        <input id="authName" type="text" placeholder="e.g. Sarah Namuli" autocomplete="name" maxlength="60">
+      </div>
+      <label for="authEmail">Email</label>
+      <input id="authEmail" type="email" placeholder="you@example.com" autocomplete="email" maxlength="120">
+      <div data-only="signup">
+        <label for="authPhone">Phone number</label>
+        <input id="authPhone" type="tel" placeholder="+256 7xx xxx xxx" autocomplete="tel" maxlength="20">
+      </div>
+      <label for="authPass">Password</label>
+      <input id="authPass" type="password" placeholder="At least 6 characters" autocomplete="current-password" maxlength="60">
+      <div class="auth-err" id="authErr"></div>
+      <button class="auth-submit" type="submit" id="authSubmit">Create account</button>
+    </form>
+    <p class="auth-note">🔒 Your credentials are stored only on this device. No data leaves your phone.</p>
+  </div>
+</div>
 
 <script>
-async function loadWeather() {
-  try {
-    const response = await fetch(
-      'https://api.open-meteo.com/v1/forecast?latitude=0.3476&longitude=32.5825&current=temperature_2m,relative_humidity_2m,wind_speed_10m'
-    );
+(function(){
+  const AUTH_KEY = 'diagro_auth_v1';
+  const SESSION_KEY = 'diagro_session_v1';
+  const ACCT_KEY = 'diagro_account_v1';
+  const gate = document.getElementById('authGate');
+  const form = document.getElementById('authForm');
+  const tabs = gate.querySelectorAll('.auth-tab');
+  const errEl = document.getElementById('authErr');
+  const submitBtn = document.getElementById('authSubmit');
+  const tag = document.getElementById('authTag');
+  let mode = 'signup';
 
-    const data = await response.json();
-
-    const weatherBox = document.getElementById('weatherLive');
-
-    if(weatherBox){
-      weatherBox.innerHTML = `
-        <div><strong>Temperature:</strong> ${data.current.temperature_2m}°C</div>
-        <div><strong>Humidity:</strong> ${data.current.relative_humidity_2m}%</div>
-        <div><strong>Wind:</strong> ${data.current.wind_speed_10m} km/h</div>
-      `;
+  async function hash(str){
+    try {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str + '|diagro-salt-v1'));
+      return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    } catch(e){
+      // Fallback simple hash
+      let h=0; for(let i=0;i<str.length;i++){h=((h<<5)-h)+str.charCodeAt(i);h|=0;} return 'f'+h;
     }
-  } catch(err){
-    console.error(err);
   }
-}
+  function getUsers(){ try { return JSON.parse(localStorage.getItem(AUTH_KEY) || '{}'); } catch(e){ return {}; } }
+  function saveUsers(u){ try { localStorage.setItem(AUTH_KEY, JSON.stringify(u)); } catch(e){} }
+  function setSession(email){ try { localStorage.setItem(SESSION_KEY, email); } catch(e){} }
+  function clearSession(){ try { localStorage.removeItem(SESSION_KEY); } catch(e){} }
+  function getSession(){ try { return localStorage.getItem(SESSION_KEY); } catch(e){ return null; } }
 
-loadWeather();
+  function showGate(){ gate.classList.add('show'); document.body.classList.add('auth-locked'); document.body.style.overflow='hidden'; }
+  function hideGate(){ gate.classList.remove('show'); document.body.classList.remove('auth-locked'); document.body.style.overflow=''; }
 
-/* ═══════════════════════════════════
-   DRAGGABLE WHATSAPP FLOATING BUTTON
-═══════════════════════════════════ */
-(function(){
-  const btn = document.getElementById('waFloat');
-  if (!btn) return;
-  const STORAGE_KEY = 'waFloatPos';
-  const MARGIN = 8;
-  let dragging = false, moved = false, startX = 0, startY = 0, origX = 0, origY = 0;
-
-  function clamp(x, y){
-    const r = btn.getBoundingClientRect();
-    const maxX = window.innerWidth - r.width - MARGIN;
-    const maxY = window.innerHeight - r.height - MARGIN;
-    return { x: Math.min(Math.max(MARGIN, x), maxX), y: Math.min(Math.max(MARGIN, y), maxY) };
+  function setMode(m){
+    mode = m;
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.mode === m));
+    form.querySelectorAll('[data-only="signup"]').forEach(el => el.style.display = (m === 'signup') ? 'block' : 'none');
+    submitBtn.textContent = m === 'signup' ? 'Create account' : 'Sign in';
+    tag.textContent = m === 'signup'
+      ? 'Create your account to access weather, market prices, alerts and the farmer forum.'
+      : 'Welcome back — sign in to continue.';
+    errEl.textContent = '';
+    document.getElementById('authPass').setAttribute('autocomplete', m === 'signup' ? 'new-password' : 'current-password');
   }
-  function setPos(x, y, save){
-    const c = clamp(x, y);
-    btn.style.left = c.x + 'px';
-    btn.style.top  = c.y + 'px';
-    btn.style.right = 'auto';
-    btn.style.bottom = 'auto';
-    if (save) try { localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); } catch(e){}
-  }
-  try {
-    const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-    if (s && typeof s.x === 'number' && typeof s.y === 'number') setPos(s.x, s.y, false);
-  } catch(e){}
-  window.addEventListener('resize', () => {
-    if (!btn.style.left) return;
-    const r = btn.getBoundingClientRect();
-    setPos(r.left, r.top, true);
-  });
+  tabs.forEach(t => t.addEventListener('click', () => setMode(t.dataset.mode)));
 
-  function onDown(e){
-    const p = e.touches ? e.touches[0] : e;
-    dragging = true; moved = false;
-    const r = btn.getBoundingClientRect();
-    origX = r.left; origY = r.top;
-    startX = p.clientX; startY = p.clientY;
-    btn.classList.add('dragging');
-  }
-  function onMove(e){
-    if (!dragging) return;
-    const p = e.touches ? e.touches[0] : e;
-    const dx = p.clientX - startX, dy = p.clientY - startY;
-    if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
-    setPos(origX + dx, origY + dy, false);
-    if (e.cancelable) e.preventDefault();
-  }
-  function onUp(){
-    if (!dragging) return;
-    dragging = false;
-    btn.classList.remove('dragging');
-    const r = btn.getBoundingClientRect();
-    setPos(r.left, r.top, true);
-  }
-  btn.addEventListener('pointerdown', onDown);
-  window.addEventListener('pointermove', onMove, { passive: false });
-  window.addEventListener('pointerup', onUp);
-  window.addEventListener('pointercancel', onUp);
-  btn.addEventListener('click', (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
-})();
-
-/* ============= INSTALL APP BUTTON ============= */
-(function(){
-  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-  if (isStandalone) return; // already installed
-
-  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
-  let deferredPrompt = null;
-
-  // Build button
-  const btn = document.createElement('button');
-  btn.id = 'installBtn';
-  btn.type = 'button';
-  btn.setAttribute('aria-label', 'Install Di-Agro app');
-  btn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Install App</span>';
-  Object.assign(btn.style, {
-    position:'fixed', bottom:'80px', left:'16px', zIndex:'9999',
-    display:'none', alignItems:'center', gap:'8px',
-    padding:'10px 14px', borderRadius:'999px', border:'none',
-    background:'linear-gradient(135deg,#1a3a1f,#2d6a35)', color:'#fff',
-    fontFamily:"'DM Sans',sans-serif", fontSize:'14px', fontWeight:'600',
-    boxShadow:'0 6px 20px rgba(26,58,31,0.4)', cursor:'pointer',
-    transition:'transform .2s, box-shadow .2s'
-  });
-  btn.onmouseenter = () => btn.style.transform = 'scale(1.05)';
-  btn.onmouseleave = () => btn.style.transform = 'scale(1)';
-  document.body.appendChild(btn);
-
-  // iOS instruction sheet
-  function showIOSHelp(){
-    const overlay = document.createElement('div');
-    Object.assign(overlay.style, {
-      position:'fixed', inset:'0', background:'rgba(0,0,0,0.55)', zIndex:'10000',
-      display:'flex', alignItems:'flex-end', justifyContent:'center', padding:'20px'
-    });
-    overlay.innerHTML = `
-      <div style="background:#fff;border-radius:18px;max-width:380px;width:100%;padding:22px;font-family:'DM Sans',sans-serif;box-shadow:0 -10px 40px rgba(0,0,0,0.3)">
-        <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#1a3a1f;margin-bottom:8px">Install Di-Agro</div>
-        <div style="font-size:14px;color:#5a7a5c;line-height:1.6;margin-bottom:16px">To install this app on your iPhone:</div>
-        <ol style="font-size:14px;color:#1e2e1f;line-height:1.8;padding-left:20px;margin-bottom:18px">
-          <li>Tap the <strong>Share</strong> button <span style="display:inline-block;vertical-align:-3px">⬆️</span> in Safari</li>
-          <li>Scroll and tap <strong>"Add to Home Screen"</strong></li>
-          <li>Tap <strong>Add</strong> in the top right</li>
-        </ol>
-        <button id="iosClose" style="width:100%;padding:12px;border:none;border-radius:10px;background:#1a3a1f;color:#fff;font-weight:600;font-size:14px;cursor:pointer">Got it</button>
-      </div>`;
-    document.body.appendChild(overlay);
-    overlay.querySelector('#iosClose').onclick = () => overlay.remove();
-    overlay.onclick = (e) => { if (e.target === overlay) overlay.remove(); };
-  }
-
-  window.addEventListener('beforeinstallprompt', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    deferredPrompt = e;
-    btn.style.display = 'inline-flex';
-  });
-
-  window.addEventListener('appinstalled', () => {
-    btn.style.display = 'none';
-    deferredPrompt = null;
-  });
-
-  btn.addEventListener('click', async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      if (outcome === 'accepted') btn.style.display = 'none';
-      deferredPrompt = null;
-    } else if (isIOS) {
-      showIOSHelp();
+    errEl.textContent = '';
+    const email = document.getElementById('authEmail').value.trim().toLowerCase();
+    const pass = document.getElementById('authPass').value;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ errEl.textContent = 'Please enter a valid email.'; return; }
+    if (pass.length < 6){ errEl.textContent = 'Password must be at least 6 characters.'; return; }
+    submitBtn.disabled = true;
+    try {
+      const users = getUsers();
+      if (mode === 'signup'){
+        const name = document.getElementById('authName').value.trim();
+        const phone = document.getElementById('authPhone').value.trim();
+        if (!name){ errEl.textContent = 'Please enter your full name.'; return; }
+        if (!/^[+\d][\d\s\-()]{6,}$/.test(phone)){ errEl.textContent = 'Please enter a valid phone number.'; return; }
+        if (users[email]){ errEl.textContent = 'An account with this email already exists. Sign in instead.'; return; }
+        users[email] = { name, email, phone, passHash: await hash(pass), createdAt: Date.now() };
+        saveUsers(users);
+        setSession(email);
+        try { localStorage.setItem(ACCT_KEY, JSON.stringify({ name, region:'', email, phone, createdAt: Date.now() })); } catch(e){}
+        finishAuth(users[email]);
+      } else {
+        const u = users[email];
+        if (!u || u.passHash !== await hash(pass)){ errEl.textContent = 'Wrong email or password.'; return; }
+        setSession(email);
+        try {
+          const cur = JSON.parse(localStorage.getItem(ACCT_KEY) || '{}');
+          localStorage.setItem(ACCT_KEY, JSON.stringify(Object.assign({region:''}, cur, { name:u.name, email:u.email, phone:u.phone })));
+        } catch(e){}
+        finishAuth(u);
+      }
+    } finally {
+      submitBtn.disabled = false;
     }
   });
 
-  // iOS: no beforeinstallprompt event — show button immediately
-  if (isIOS) btn.style.display = 'inline-flex';
+  function finishAuth(user){
+    hideGate();
+    form.reset();
+    // Sync greeting + avatar with the existing account UI
+    const greetingTag = document.getElementById('greetingTag');
+    const avatarBtn = document.getElementById('avatarBtn');
+    if (greetingTag) greetingTag.textContent = 'Hello, ' + (user.name.split(/\s+/)[0]);
+    if (avatarBtn){
+      const ini = user.name.trim().split(/\s+/).slice(0,2).map(s=>s[0].toUpperCase()).join('');
+      avatarBtn.textContent = ini || '+';
+      avatarBtn.classList.remove('empty');
+    }
+    if (window.__diagroPushNotif){
+      window.__diagroPushNotif({ icon:'✅', title:'Welcome, ' + user.name.split(/\s+/)[0] + '!', text:'You are signed in. Live weather is loading…' });
+    }
+    if (window.__diagroFetchWeather) window.__diagroFetchWeather();
+  }
+
+  // Logout — expose globally so the avatar / a menu can call it
+  window.__diagroLogout = function(){
+    clearSession();
+    showGate();
+    setMode('signin');
+  };
+
+  // Boot: gate the app unless a valid session exists
+  const sess = getSession();
+  const users = getUsers();
+  if (sess && users[sess]){
+    // Already signed in
+  } else {
+    showGate();
+    setMode('signup');
+  }
+})();
+</script>
+
+<!-- ═══════════════════════════════════
+     LIVE WEATHER (Open-Meteo, no API key)
+═══════════════════════════════════ -->
+<script>
+(function(){
+  const KAMPALA = { lat: 0.3476, lon: 32.5825, label: 'Kampala, Central Uganda' };
+  const WCACHE = 'diagro_weather_cache_v1';
+  const LOCCACHE = 'diagro_weather_loc_v1';
+
+  // weather_code → emoji + label (WMO codes)
+  const WCODE = {
+    0:['☀️','Clear sky'], 1:['🌤️','Mainly clear'], 2:['⛅','Partly cloudy'], 3:['☁️','Overcast'],
+    45:['🌫️','Fog'], 48:['🌫️','Rime fog'],
+    51:['🌦️','Light drizzle'], 53:['🌦️','Drizzle'], 55:['🌦️','Heavy drizzle'],
+    56:['🌧️','Freezing drizzle'], 57:['🌧️','Heavy freezing drizzle'],
+    61:['🌧️','Light rain'], 63:['🌧️','Rain'], 65:['🌧️','Heavy rain'],
+    66:['🌧️','Freezing rain'], 67:['🌧️','Heavy freezing rain'],
+    71:['🌨️','Light snow'], 73:['🌨️','Snow'], 75:['❄️','Heavy snow'], 77:['❄️','Snow grains'],
+    80:['🌦️','Rain showers'], 81:['🌧️','Heavy showers'], 82:['⛈️','Violent showers'],
+    85:['🌨️','Snow showers'], 86:['❄️','Heavy snow showers'],
+    95:['⛈️','Thunderstorm'], 96:['⛈️','Thunder + hail'], 99:['⛈️','Severe thunder']
+  };
+  const DAYS = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+
+  function getLoc(){ try { return JSON.parse(localStorage.getItem(LOCCACHE)||'null'); } catch(e){ return null; } }
+  function setLoc(l){ try { localStorage.setItem(LOCCACHE, JSON.stringify(l)); } catch(e){} }
+  function getCache(){ try { return JSON.parse(localStorage.getItem(WCACHE)||'null'); } catch(e){ return null; } }
+  function setCache(c){ try { localStorage.setItem(WCACHE, JSON.stringify(c)); } catch(e){} }
+
+  async function reverseGeocode(lat, lon){
+    try {
+      const r = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10`, { headers:{Accept:'application/json'} });
+      if (!r.ok) return '';
+      const j = await r.json();
+      const a = j.address || {};
+      return [a.city||a.town||a.village||a.suburb||a.county, a.state||a.region, a.country].filter(Boolean).join(', ');
+    } catch(e){ return ''; }
+  }
+
+  function render(data, locLabel){
+    const cur = data.current || {};
+    const code = cur.weather_code ?? 2;
+    const [emoji, desc] = WCODE[code] || ['🌡️','—'];
+    document.getElementById('wmLoc').textContent = '📍 ' + (locLabel || KAMPALA.label);
+    document.getElementById('wmTemp').textContent = Math.round(cur.temperature_2m) + '°C';
+    document.getElementById('wmCond').textContent = emoji + ' ' + desc;
+    document.getElementById('wmRain').textContent = (cur.precipitation ?? 0).toFixed(1) + 'mm';
+    document.getElementById('wmHum').textContent = Math.round(cur.relative_humidity_2m ?? 0) + '%';
+    document.getElementById('wmWind').textContent = Math.round(cur.wind_speed_10m ?? 0) + 'km/h';
+    document.getElementById('wmUv').textContent = cur.uv_index != null ? Math.round(cur.uv_index) : '—';
+
+    const upd = document.getElementById('wmUpdated');
+    if (upd) upd.textContent = 'updated ' + new Date().toLocaleTimeString('en-UG',{hour:'2-digit',minute:'2-digit'});
+
+    const strip = document.getElementById('forecastStrip');
+    const d = data.daily || {};
+    if (strip && d.time){
+      strip.innerHTML = d.time.map((iso, i) => {
+        const dt = new Date(iso + 'T00:00:00');
+        const isToday = i === 0;
+        const lbl = isToday ? 'TODAY' : DAYS[dt.getDay()];
+        const [em] = WCODE[d.weather_code[i]] || ['🌡️','—'];
+        const hi = Math.round(d.temperature_2m_max[i]);
+        const lo = Math.round(d.temperature_2m_min[i]);
+        return `<div class="fc-day${isToday?' today':''}"><div class="fc-d">${lbl}</div><div class="fc-emoji">${em}</div><div class="fc-hi">${hi}°</div><div class="fc-lo">${lo}°</div></div>`;
+      }).join('');
+    }
+  }
+
+  async function fetchWeather(lat, lon, locLabel){
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`
+      + `&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,precipitation,uv_index`
+      + `&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=7`;
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error('weather '+r.status);
+      const data = await r.json();
+      setCache({ data, locLabel, ts: Date.now() });
+      render(data, locLabel);
+    } catch(e){
+      // Fall back to cached data on network failure
+      const c = getCache();
+      if (c) render(c.data, c.locLabel);
+      else {
+        const wmCond = document.getElementById('wmCond');
+        if (wmCond) wmCond.textContent = '⚠️ Could not fetch live weather. Pull down to retry.';
+      }
+    }
+  }
+
+  async function init(){
+    // Render cache instantly if available
+    const cached = getCache();
+    if (cached) render(cached.data, cached.locLabel);
+
+    let loc = getLoc();
+    if (!loc){
+      // Try geolocation once; fall back to Kampala
+      if (navigator.geolocation){
+        await new Promise(resolve => {
+          navigator.geolocation.getCurrentPosition(async pos => {
+            const lat = pos.coords.latitude, lon = pos.coords.longitude;
+            const label = await reverseGeocode(lat, lon) || 'Your location';
+            loc = { lat, lon, label };
+            setLoc(loc);
+            resolve();
+          }, () => { loc = KAMPALA; resolve(); }, { timeout: 6000, maximumAge: 600000 });
+        });
+      } else {
+        loc = KAMPALA;
+      }
+    }
+    fetchWeather(loc.lat, loc.lon, loc.label);
+    // Auto-refresh every 15 minutes
+    setInterval(() => fetchWeather(loc.lat, loc.lon, loc.label), 15 * 60 * 1000);
+  }
+
+  window.__diagroFetchWeather = init;
+  // Boot when DOM ready
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+
+  // Tap the weather card to refresh
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest && e.target.closest('#weatherCard');
+    if (card){
+      const loc = getLoc() || KAMPALA;
+      fetchWeather(loc.lat, loc.lon, loc.label);
+    }
+  });
+})();
+</script>
 })();
 </script>
 
