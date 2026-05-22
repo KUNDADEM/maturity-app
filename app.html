@@ -668,6 +668,24 @@ textarea.fi { resize:none; }
           <div class="slider-dots" id="sliderDots"></div>
         </div>
 
+        <!-- WHY DIGITAL FARMING (moved from Community) -->
+        <div class="card" style="margin-top:12px">
+          <div class="card-title">Why Digital Farming Matters</div>
+          <div style="height:8px"></div>
+          <div class="benefit-item"><div class="benefit-icon">📈</div><div class="benefit-text"><h4>Up to 40% Higher Yields</h4><p>Data-driven decisions on planting, watering and harvesting consistently outperform traditional methods.</p></div></div>
+          <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text"><h4>Better Income for Farmers</h4><p>Direct market access and real-time pricing mean farmers get 20–35% more for their produce.</p></div></div>
+          <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text"><h4>Food Security for Uganda</h4><p>Smarter farming across Uganda's 134 districts means more food, less waste, and a resilient food system.</p></div></div>
+          <div class="benefit-item"><div class="benefit-icon">🏦</div><div class="benefit-text"><h4>Access to Credit</h4><p>Digital farm records make it easier to qualify for agricultural loans and insurance products.</p></div></div>
+        </div>
+        <div class="card">
+          <div style="text-align:center;padding:12px 0">
+            <div style="font-family:'Playfair Display',serif;font-size:3rem;color:var(--green);font-weight:900;line-height:1">72%</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.6">of Ugandan farmers reported better crop decisions after accessing digital agricultural tools. <em>(MAAIF 2024)</em></div>
+          </div>
+          <div class="divider"></div>
+          <p style="font-size:11.5px;color:var(--muted);line-height:1.7">Agriculture employs over 70% of Uganda's workforce and contributes 24% of GDP. Digital farming bridges the gap — bringing weather forecasts, expert knowledge, financial services and market connectivity to every farmer's phone.</p>
+        </div>
+
         <div class="cta-card">
           <h3>Transform Your Farm</h3>
           <p>Join 50,000+ Ugandan farmers using MERAKI DI-AGRO to grow more, earn more, and farm smarter.</p>
@@ -688,28 +706,21 @@ textarea.fi { resize:none; }
 
         <div style="height:12px"></div>
 
-        <div class="weather-main-card">
-          <div class="wm-loc">📍 Kampala, Central Uganda</div>
-          <div class="wm-temp">27°C</div>
-          <div class="wm-cond">⛅ Partly Cloudy — Light Winds</div>
+        <div class="weather-main-card" id="weatherCard">
+          <div class="wm-loc" id="wmLoc">📍 Kampala, Central Uganda</div>
+          <div class="wm-temp" id="wmTemp">—°C</div>
+          <div class="wm-cond" id="wmCond">⏳ Fetching live weather…</div>
           <div class="wm-details">
-            <div class="wm-detail"><div class="val">12mm</div><div class="lbl">Rainfall</div></div>
-            <div class="wm-detail"><div class="val">74%</div><div class="lbl">Humidity</div></div>
-            <div class="wm-detail"><div class="val">14km/h</div><div class="lbl">Wind</div></div>
-            <div class="wm-detail"><div class="val">6</div><div class="lbl">UV Index</div></div>
+            <div class="wm-detail"><div class="val" id="wmRain">—</div><div class="lbl">Rainfall</div></div>
+            <div class="wm-detail"><div class="val" id="wmHum">—</div><div class="lbl">Humidity</div></div>
+            <div class="wm-detail"><div class="val" id="wmWind">—</div><div class="lbl">Wind</div></div>
+            <div class="wm-detail"><div class="val" id="wmUv">—</div><div class="lbl">UV Index</div></div>
           </div>
         </div>
 
-        <div class="section-label">// 7-Day Forecast</div>
-        <div class="forecast-strip">
-          <div class="fc-day today"><div class="fc-d">TODAY</div><div class="fc-emoji">⛅</div><div class="fc-hi">27°</div><div class="fc-lo">18°</div></div>
-          <div class="fc-day"><div class="fc-d">MON</div><div class="fc-emoji">☀️</div><div class="fc-hi">29°</div><div class="fc-lo">19°</div></div>
-          <div class="fc-day"><div class="fc-d">TUE</div><div class="fc-emoji">⛅</div><div class="fc-hi">27°</div><div class="fc-lo">18°</div></div>
-          <div class="fc-day"><div class="fc-d">WED</div><div class="fc-emoji">🌧️</div><div class="fc-hi">24°</div><div class="fc-lo">17°</div></div>
-          <div class="fc-day"><div class="fc-d">THU</div><div class="fc-emoji">🌦️</div><div class="fc-hi">25°</div><div class="fc-lo">17°</div></div>
-          <div class="fc-day"><div class="fc-d">FRI</div><div class="fc-emoji">☀️</div><div class="fc-hi">30°</div><div class="fc-lo">20°</div></div>
-          <div class="fc-day"><div class="fc-d">SAT</div><div class="fc-emoji">⛅</div><div class="fc-hi">28°</div><div class="fc-lo">19°</div></div>
-          <div class="fc-day"><div class="fc-d">SUN</div><div class="fc-emoji">🌧️</div><div class="fc-hi">23°</div><div class="fc-lo">16°</div></div>
+        <div class="section-label">// 7-Day Forecast <span id="wmUpdated" style="float:right;font-weight:400;opacity:0.6"></span></div>
+        <div class="forecast-strip" id="forecastStrip">
+          <div class="fc-day today"><div class="fc-d">TODAY</div><div class="fc-emoji">⏳</div><div class="fc-hi">—</div><div class="fc-lo">—</div></div>
         </div>
 
         <div class="section-label">// Active Pest & Disease Alerts</div>
@@ -1051,7 +1062,6 @@ textarea.fi { resize:none; }
         <div class="tool-tabs" id="communityTabs">
           <button class="tool-tab active" onclick="showCommPanel('posts',this)">🤝 Forum</button>
           <button class="tool-tab" onclick="showCommPanel('methods',this)">🌱 Methods</button>
-          <button class="tool-tab" onclick="showCommPanel('why',this)">📚 Why Digital</button>
           <button class="tool-tab" onclick="showCommPanel('lang',this)">🌐 Language</button>
         </div>
 
@@ -1083,47 +1093,18 @@ textarea.fi { resize:none; }
         <!-- FARMING METHODS -->
         <div class="tool-panel" id="cp-methods">
           <div style="height:12px"></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80&auto=format&fit=crop" alt="Organic farming with compost and rows of leafy vegetables"><div class="tc-text"><h3>Organic Farming</h3><p>Farm without synthetic chemicals using natural compost, biological pest control and crop rotation.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1583878539414-eb1da7b6404d?w=600&q=80&auto=format&fit=crop" alt="Stepped rice terraces on a hillside"><div class="tc-text"><h3>Terrace Farming</h3><p>Grow on hillside terraces to prevent erosion — ideal for Uganda's hilly Kigezi and Rwenzori regions.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80&auto=format&fit=crop" alt="Aquaponic tank growing vegetables above fish"><div class="tc-text"><h3>Aquaponics</h3><p>Combine fish farming and vegetables in a closed-loop system using 90% less water.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&q=80&auto=format&fit=crop" alt="Indoor vertical farm with stacked grow racks"><div class="tc-text"><h3>Vertical Farming</h3><p>Grow crops in stacked layers indoors — perfect for urban Kampala, Jinja, and Entebbe.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600&q=80&auto=format&fit=crop" alt="Hydroponic lettuce growing in nutrient water channels"><div class="tc-text"><h3>Hydroponics</h3><p>Soil-free growing with nutrient-rich water. Produces 3–10× more yield in the same space.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80&auto=format&fit=crop" alt="Mixed farm with crops, livestock and trees"><div class="tc-text"><h3>Integrated Farming</h3><p>Combine crops, livestock and trees on one farm for maximum productivity all year round.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80&auto=format&fit=crop" alt="Drought-tolerant farm with rainwater harvesting tanks"><div class="tc-text"><h3>Climate-Smart Farming</h3><p>Adapt to Uganda's changing rainfall using drought-tolerant seeds and water harvesting.</p></div></div>
-          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1530507629858-e3759c2c9e9c?w=600&q=80&auto=format&fit=crop" alt="Agroforestry — crops growing among shade trees"><div class="tc-text"><h3>Agroforestry</h3><p>Grow crops among trees for shade, soil health, and an extra income from timber or fruit.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1592982537447-7440770faae9?w=800&q=80&auto=format&fit=crop" alt="Organic vegetable rows with compost mulch"><div class="tc-text"><h3>Organic Farming</h3><p>Farm without synthetic chemicals using natural compost, biological pest control and crop rotation.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1543782942-a05d4d50a9aa?w=800&q=80&auto=format&fit=crop" alt="Stepped rice terraces on a hillside"><div class="tc-text"><h3>Terrace Farming</h3><p>Grow on hillside terraces to prevent erosion — ideal for Uganda's hilly Kigezi and Rwenzori regions.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=800&q=80&auto=format&fit=crop" alt="Aquaponics system with fish tank feeding plant grow bed"><div class="tc-text"><h3>Aquaponics</h3><p>Combine fish farming and vegetables in a closed-loop system using 90% less water.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80&auto=format&fit=crop" alt="Indoor vertical farm with stacked grow racks under LED light"><div class="tc-text"><h3>Vertical Farming</h3><p>Grow crops in stacked layers indoors — perfect for urban Kampala, Jinja, and Entebbe.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=800&q=80&auto=format&fit=crop" alt="Hydroponic lettuce growing in nutrient water channels"><div class="tc-text"><h3>Hydroponics</h3><p>Soil-free growing with nutrient-rich water. Produces 3–10× more yield in the same space.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80&auto=format&fit=crop" alt="Mixed smallholder farm with crops and grazing livestock"><div class="tc-text"><h3>Integrated Farming</h3><p>Combine crops, livestock and trees on one farm for maximum productivity all year round.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80&auto=format&fit=crop" alt="Drip irrigation lines watering drought-tolerant crops"><div class="tc-text"><h3>Climate-Smart Farming</h3><p>Adapt to Uganda's changing rainfall using drought-tolerant seeds and water harvesting.</p></div></div>
+          <div class="type-card-app"><img class="tc-img" loading="lazy" src="https://images.unsplash.com/photo-1597916829826-02e5bb4a54e0?w=800&q=80&auto=format&fit=crop" alt="Coffee shrubs growing under shade trees in an agroforestry plot"><div class="tc-text"><h3>Agroforestry</h3><p>Grow crops among trees for shade, soil health, and an extra income from timber or fruit.</p></div></div>
         </div>
 
-        <!-- WHY DIGITAL -->
-        <div class="tool-panel" id="cp-why">
-          <div class="card" style="margin-top:12px">
-            <div class="card-title">Why Digital Farming Matters</div>
-            <div style="height:8px"></div>
-            <div class="benefit-item"><div class="benefit-icon">📈</div><div class="benefit-text"><h4>Up to 40% Higher Yields</h4><p>Data-driven decisions on planting, watering and harvesting consistently outperform traditional methods.</p></div></div>
-            <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text"><h4>Better Income for Farmers</h4><p>Direct market access and real-time pricing mean farmers get 20–35% more for their produce.</p></div></div>
-            <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text"><h4>Food Security for Uganda</h4><p>Smarter farming across Uganda's 134 districts means more food, less waste, and a resilient food system.</p></div></div>
-            <div class="benefit-item"><div class="benefit-icon">🏦</div><div class="benefit-text"><h4>Access to Credit</h4><p>Digital farm records make it easier to qualify for agricultural loans and insurance products.</p></div></div>
-          </div>
-          <div class="card">
-            <div style="text-align:center;padding:12px 0">
-              <div style="font-family:'Playfair Display',serif;font-size:3rem;color:var(--green);font-weight:900;line-height:1">72%</div>
-              <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.6">of Ugandan farmers reported better crop decisions after accessing digital agricultural tools. <em>(MAAIF 2024)</em></div>
-            </div>
-            <div class="divider"></div>
-            <p style="font-size:11.5px;color:var(--muted);line-height:1.7">Agriculture employs over 70% of Uganda's workforce and contributes 24% of GDP. Digital farming bridges the gap — bringing weather forecasts, expert knowledge, financial services and market connectivity to every farmer's phone.</p>
-          </div>
-          <div class="knowledge-card">
-            <img class="kc-img" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80" alt="Precision Agriculture">
-            <div class="kc-body"><div class="kc-title">Precision Agriculture</div><div class="kc-desc">Use GPS mapping, drone imagery and satellite data to monitor crop health, soil moisture, and field variations in real time.</div></div>
-          </div>
-          <div class="knowledge-card">
-            <img class="kc-img" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Mobile Farming">
-            <div class="kc-body"><div class="kc-title">Mobile-First Farming</div><div class="kc-desc">Access all farming tools, alerts and market data directly on your mobile phone — works on basic smartphones with low data.</div></div>
-          </div>
-          <div class="knowledge-card">
-            <img class="kc-img" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&q=80" alt="Farm Analytics">
-            <div class="kc-body"><div class="kc-title">Farm Records & Analytics</div><div class="kc-desc">Keep digital records of inputs, yields and expenses. Track farm performance over seasons and generate reports for lenders.</div></div>
-          </div>
-        </div>
+
+
 
         <!-- LANGUAGE -->
         <div class="tool-panel" id="cp-lang">
@@ -1996,17 +1977,17 @@ document.getElementById('regModal').addEventListener('click', function(e) {
 
   // iOS Safari has no beforeinstallprompt — show manually after a short delay
   if (isIOS && isMobile) {
-    setTimeout(() => { if (!backdrop.classList.contains('show')) showPrompt(true); }, 1500);
+    setTimeout(() => { if (!backdrop.classList.contains('show')) showPrompt(true); }, 1200);
   }
 
-  // Android fallback: if beforeinstallprompt never fires within 4s but we're
-  // on a mobile browser, still surface a generic prompt the user can dismiss.
-  if (!isIOS && isMobile) {
+  // Android & desktop fallback: if beforeinstallprompt never fires within 2.5s
+  // still surface a generic install/download prompt the user can dismiss.
+  if (!isIOS) {
     setTimeout(() => {
       if (!backdrop.classList.contains('show') && !deferredPrompt) {
-        if ('serviceWorker' in navigator) showPrompt(false);
+        showPrompt(false);
       }
-    }, 4000);
+    }, 2500);
   }
 })();
 </script>
@@ -2102,12 +2083,9 @@ document.getElementById('regModal').addEventListener('click', function(e) {
   });
   window.__diagroOpenAccount = openAcct;
 
-  // Prompt account creation on first visit (after a short delay)
+  // Apply any existing account info to greeting (auth gate handles first-visit signup)
   const existing = load();
   applyAccount(existing);
-  if (!existing){
-    setTimeout(() => { if (!load()) openAcct(); }, 2500);
-  }
 
   // ───────── Notifications ─────────
   const NKEY = 'diagro_notifs_v1';
@@ -2226,6 +2204,311 @@ document.getElementById('regModal').addEventListener('click', function(e) {
       sub.textContent = err.code === 1 ? 'Permission denied. Enable location in browser settings.' : (err.message || 'Try again outdoors.');
     }, { enableHighAccuracy:true, timeout:15000, maximumAge:60000 });
   };
+})();
+</script>
+
+<!-- ═══════════════════════════════════
+     AUTH GATE — required to access app
+═══════════════════════════════════ -->
+<style>
+.auth-gate{position:fixed;inset:0;background:linear-gradient(160deg,#0b3d24,#0c447c);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;overflow-y:auto;font-family:inherit}
+.auth-gate.show{display:flex}
+.auth-gate.show ~ .app-shell, body.auth-locked .app-shell, body.auth-locked .wa-float{filter:blur(4px);pointer-events:none;user-select:none}
+.auth-card{width:100%;max-width:380px;background:#fff;border-radius:18px;padding:26px 22px;box-shadow:0 30px 80px rgba(0,0,0,0.4);max-height:95vh;overflow-y:auto}
+.auth-logo{font-family:'Playfair Display',serif;font-size:22px;color:#0b3d24;font-weight:800;text-align:center}
+.auth-logo small{display:block;font-family:'Space Mono',monospace;font-size:10px;color:#6b7280;text-transform:uppercase;letter-spacing:0.14em;font-weight:400;margin-top:4px}
+.auth-tag{font-size:13px;color:#4b5563;text-align:center;margin:10px 0 18px;line-height:1.5}
+.auth-tabs{display:flex;background:#f1f5f4;border-radius:10px;padding:4px;margin-bottom:16px}
+.auth-tab{flex:1;background:transparent;border:none;padding:10px;font-size:13px;font-weight:600;color:#6b7280;cursor:pointer;border-radius:7px;font-family:inherit;transition:all .15s}
+.auth-tab.active{background:#fff;color:#0b3d24;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+.auth-card label{display:block;font-size:11px;color:#374151;font-weight:600;margin:10px 0 4px;text-transform:uppercase;letter-spacing:0.06em}
+.auth-card input{width:100%;padding:11px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:#111}
+.auth-card input:focus{outline:none;border-color:#0b3d24;box-shadow:0 0 0 3px rgba(11,61,36,0.12)}
+.auth-err{color:#dc2626;font-size:12px;min-height:16px;margin:8px 0 0;text-align:center}
+.auth-submit{width:100%;background:#0b3d24;color:#fff;border:none;padding:13px;font-size:15px;font-weight:700;border-radius:10px;margin-top:14px;cursor:pointer;font-family:inherit;transition:transform .12s,opacity .15s}
+.auth-submit:active{transform:scale(0.97)}
+.auth-submit:disabled{opacity:0.6;cursor:not-allowed}
+.auth-note{font-size:11px;color:#9ca3af;text-align:center;margin-top:14px;line-height:1.5}
+.logout-link{display:block;width:100%;background:none;border:none;color:#dc2626;font-size:12px;text-align:center;margin-top:10px;cursor:pointer;font-family:inherit;text-decoration:underline}
+</style>
+
+<div class="auth-gate" id="authGate" role="dialog" aria-modal="true" aria-labelledby="authLogo">
+  <div class="auth-card">
+    <div class="auth-logo" id="authLogo">🌾 MERAKI DI-AGRO<small>Digital Farming Platform</small></div>
+    <p class="auth-tag" id="authTag">Create your account to access weather, market prices, alerts and the farmer forum.</p>
+    <div class="auth-tabs" role="tablist">
+      <button class="auth-tab active" data-mode="signup" type="button">Create account</button>
+      <button class="auth-tab" data-mode="signin" type="button">Sign in</button>
+    </div>
+    <form id="authForm" autocomplete="on" novalidate>
+      <div data-only="signup">
+        <label for="authName">Full name</label>
+        <input id="authName" type="text" placeholder="e.g. Sarah Namuli" autocomplete="name" maxlength="60">
+      </div>
+      <label for="authEmail">Email</label>
+      <input id="authEmail" type="email" placeholder="you@example.com" autocomplete="email" maxlength="120">
+      <div data-only="signup">
+        <label for="authPhone">Phone number</label>
+        <input id="authPhone" type="tel" placeholder="+256 7xx xxx xxx" autocomplete="tel" maxlength="20">
+      </div>
+      <label for="authPass">Password</label>
+      <input id="authPass" type="password" placeholder="At least 6 characters" autocomplete="current-password" maxlength="60">
+      <div class="auth-err" id="authErr"></div>
+      <button class="auth-submit" type="submit" id="authSubmit">Create account</button>
+    </form>
+    <p class="auth-note">🔒 Your credentials are stored only on this device. No data leaves your phone.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  const AUTH_KEY = 'diagro_auth_v1';
+  const SESSION_KEY = 'diagro_session_v1';
+  const ACCT_KEY = 'diagro_account_v1';
+  const gate = document.getElementById('authGate');
+  const form = document.getElementById('authForm');
+  const tabs = gate.querySelectorAll('.auth-tab');
+  const errEl = document.getElementById('authErr');
+  const submitBtn = document.getElementById('authSubmit');
+  const tag = document.getElementById('authTag');
+  let mode = 'signup';
+
+  async function hash(str){
+    try {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str + '|diagro-salt-v1'));
+      return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    } catch(e){
+      // Fallback simple hash
+      let h=0; for(let i=0;i<str.length;i++){h=((h<<5)-h)+str.charCodeAt(i);h|=0;} return 'f'+h;
+    }
+  }
+  function getUsers(){ try { return JSON.parse(localStorage.getItem(AUTH_KEY) || '{}'); } catch(e){ return {}; } }
+  function saveUsers(u){ try { localStorage.setItem(AUTH_KEY, JSON.stringify(u)); } catch(e){} }
+  function setSession(email){ try { localStorage.setItem(SESSION_KEY, email); } catch(e){} }
+  function clearSession(){ try { localStorage.removeItem(SESSION_KEY); } catch(e){} }
+  function getSession(){ try { return localStorage.getItem(SESSION_KEY); } catch(e){ return null; } }
+
+  function showGate(){ gate.classList.add('show'); document.body.classList.add('auth-locked'); document.body.style.overflow='hidden'; }
+  function hideGate(){ gate.classList.remove('show'); document.body.classList.remove('auth-locked'); document.body.style.overflow=''; }
+
+  function setMode(m){
+    mode = m;
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.mode === m));
+    form.querySelectorAll('[data-only="signup"]').forEach(el => el.style.display = (m === 'signup') ? 'block' : 'none');
+    submitBtn.textContent = m === 'signup' ? 'Create account' : 'Sign in';
+    tag.textContent = m === 'signup'
+      ? 'Create your account to access weather, market prices, alerts and the farmer forum.'
+      : 'Welcome back — sign in to continue.';
+    errEl.textContent = '';
+    document.getElementById('authPass').setAttribute('autocomplete', m === 'signup' ? 'new-password' : 'current-password');
+  }
+  tabs.forEach(t => t.addEventListener('click', () => setMode(t.dataset.mode)));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errEl.textContent = '';
+    const email = document.getElementById('authEmail').value.trim().toLowerCase();
+    const pass = document.getElementById('authPass').value;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ errEl.textContent = 'Please enter a valid email.'; return; }
+    if (pass.length < 6){ errEl.textContent = 'Password must be at least 6 characters.'; return; }
+    submitBtn.disabled = true;
+    try {
+      const users = getUsers();
+      if (mode === 'signup'){
+        const name = document.getElementById('authName').value.trim();
+        const phone = document.getElementById('authPhone').value.trim();
+        if (!name){ errEl.textContent = 'Please enter your full name.'; return; }
+        if (!/^[+\d][\d\s\-()]{6,}$/.test(phone)){ errEl.textContent = 'Please enter a valid phone number.'; return; }
+        if (users[email]){ errEl.textContent = 'An account with this email already exists. Sign in instead.'; return; }
+        users[email] = { name, email, phone, passHash: await hash(pass), createdAt: Date.now() };
+        saveUsers(users);
+        setSession(email);
+        try { localStorage.setItem(ACCT_KEY, JSON.stringify({ name, region:'', email, phone, createdAt: Date.now() })); } catch(e){}
+        finishAuth(users[email]);
+      } else {
+        const u = users[email];
+        if (!u || u.passHash !== await hash(pass)){ errEl.textContent = 'Wrong email or password.'; return; }
+        setSession(email);
+        try {
+          const cur = JSON.parse(localStorage.getItem(ACCT_KEY) || '{}');
+          localStorage.setItem(ACCT_KEY, JSON.stringify(Object.assign({region:''}, cur, { name:u.name, email:u.email, phone:u.phone })));
+        } catch(e){}
+        finishAuth(u);
+      }
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  function finishAuth(user){
+    hideGate();
+    form.reset();
+    // Sync greeting + avatar with the existing account UI
+    const greetingTag = document.getElementById('greetingTag');
+    const avatarBtn = document.getElementById('avatarBtn');
+    if (greetingTag) greetingTag.textContent = 'Hello, ' + (user.name.split(/\s+/)[0]);
+    if (avatarBtn){
+      const ini = user.name.trim().split(/\s+/).slice(0,2).map(s=>s[0].toUpperCase()).join('');
+      avatarBtn.textContent = ini || '+';
+      avatarBtn.classList.remove('empty');
+    }
+    if (window.__diagroPushNotif){
+      window.__diagroPushNotif({ icon:'✅', title:'Welcome, ' + user.name.split(/\s+/)[0] + '!', text:'You are signed in. Live weather is loading…' });
+    }
+    if (window.__diagroFetchWeather) window.__diagroFetchWeather();
+  }
+
+  // Logout — expose globally so the avatar / a menu can call it
+  window.__diagroLogout = function(){
+    clearSession();
+    showGate();
+    setMode('signin');
+  };
+
+  // Boot: gate the app unless a valid session exists
+  const sess = getSession();
+  const users = getUsers();
+  if (sess && users[sess]){
+    // Already signed in
+  } else {
+    showGate();
+    setMode('signup');
+  }
+})();
+</script>
+
+<!-- ═══════════════════════════════════
+     LIVE WEATHER (Open-Meteo, no API key)
+═══════════════════════════════════ -->
+<script>
+(function(){
+  const KAMPALA = { lat: 0.3476, lon: 32.5825, label: 'Kampala, Central Uganda' };
+  const WCACHE = 'diagro_weather_cache_v1';
+  const LOCCACHE = 'diagro_weather_loc_v1';
+
+  // weather_code → emoji + label (WMO codes)
+  const WCODE = {
+    0:['☀️','Clear sky'], 1:['🌤️','Mainly clear'], 2:['⛅','Partly cloudy'], 3:['☁️','Overcast'],
+    45:['🌫️','Fog'], 48:['🌫️','Rime fog'],
+    51:['🌦️','Light drizzle'], 53:['🌦️','Drizzle'], 55:['🌦️','Heavy drizzle'],
+    56:['🌧️','Freezing drizzle'], 57:['🌧️','Heavy freezing drizzle'],
+    61:['🌧️','Light rain'], 63:['🌧️','Rain'], 65:['🌧️','Heavy rain'],
+    66:['🌧️','Freezing rain'], 67:['🌧️','Heavy freezing rain'],
+    71:['🌨️','Light snow'], 73:['🌨️','Snow'], 75:['❄️','Heavy snow'], 77:['❄️','Snow grains'],
+    80:['🌦️','Rain showers'], 81:['🌧️','Heavy showers'], 82:['⛈️','Violent showers'],
+    85:['🌨️','Snow showers'], 86:['❄️','Heavy snow showers'],
+    95:['⛈️','Thunderstorm'], 96:['⛈️','Thunder + hail'], 99:['⛈️','Severe thunder']
+  };
+  const DAYS = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+
+  function getLoc(){ try { return JSON.parse(localStorage.getItem(LOCCACHE)||'null'); } catch(e){ return null; } }
+  function setLoc(l){ try { localStorage.setItem(LOCCACHE, JSON.stringify(l)); } catch(e){} }
+  function getCache(){ try { return JSON.parse(localStorage.getItem(WCACHE)||'null'); } catch(e){ return null; } }
+  function setCache(c){ try { localStorage.setItem(WCACHE, JSON.stringify(c)); } catch(e){} }
+
+  async function reverseGeocode(lat, lon){
+    try {
+      const r = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10`, { headers:{Accept:'application/json'} });
+      if (!r.ok) return '';
+      const j = await r.json();
+      const a = j.address || {};
+      return [a.city||a.town||a.village||a.suburb||a.county, a.state||a.region, a.country].filter(Boolean).join(', ');
+    } catch(e){ return ''; }
+  }
+
+  function render(data, locLabel){
+    const cur = data.current || {};
+    const code = cur.weather_code ?? 2;
+    const [emoji, desc] = WCODE[code] || ['🌡️','—'];
+    document.getElementById('wmLoc').textContent = '📍 ' + (locLabel || KAMPALA.label);
+    document.getElementById('wmTemp').textContent = Math.round(cur.temperature_2m) + '°C';
+    document.getElementById('wmCond').textContent = emoji + ' ' + desc;
+    document.getElementById('wmRain').textContent = (cur.precipitation ?? 0).toFixed(1) + 'mm';
+    document.getElementById('wmHum').textContent = Math.round(cur.relative_humidity_2m ?? 0) + '%';
+    document.getElementById('wmWind').textContent = Math.round(cur.wind_speed_10m ?? 0) + 'km/h';
+    document.getElementById('wmUv').textContent = cur.uv_index != null ? Math.round(cur.uv_index) : '—';
+
+    const upd = document.getElementById('wmUpdated');
+    if (upd) upd.textContent = 'updated ' + new Date().toLocaleTimeString('en-UG',{hour:'2-digit',minute:'2-digit'});
+
+    const strip = document.getElementById('forecastStrip');
+    const d = data.daily || {};
+    if (strip && d.time){
+      strip.innerHTML = d.time.map((iso, i) => {
+        const dt = new Date(iso + 'T00:00:00');
+        const isToday = i === 0;
+        const lbl = isToday ? 'TODAY' : DAYS[dt.getDay()];
+        const [em] = WCODE[d.weather_code[i]] || ['🌡️','—'];
+        const hi = Math.round(d.temperature_2m_max[i]);
+        const lo = Math.round(d.temperature_2m_min[i]);
+        return `<div class="fc-day${isToday?' today':''}"><div class="fc-d">${lbl}</div><div class="fc-emoji">${em}</div><div class="fc-hi">${hi}°</div><div class="fc-lo">${lo}°</div></div>`;
+      }).join('');
+    }
+  }
+
+  async function fetchWeather(lat, lon, locLabel){
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`
+      + `&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,precipitation,uv_index`
+      + `&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=7`;
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error('weather '+r.status);
+      const data = await r.json();
+      setCache({ data, locLabel, ts: Date.now() });
+      render(data, locLabel);
+    } catch(e){
+      // Fall back to cached data on network failure
+      const c = getCache();
+      if (c) render(c.data, c.locLabel);
+      else {
+        const wmCond = document.getElementById('wmCond');
+        if (wmCond) wmCond.textContent = '⚠️ Could not fetch live weather. Pull down to retry.';
+      }
+    }
+  }
+
+  async function init(){
+    // Render cache instantly if available
+    const cached = getCache();
+    if (cached) render(cached.data, cached.locLabel);
+
+    let loc = getLoc();
+    if (!loc){
+      // Try geolocation once; fall back to Kampala
+      if (navigator.geolocation){
+        await new Promise(resolve => {
+          navigator.geolocation.getCurrentPosition(async pos => {
+            const lat = pos.coords.latitude, lon = pos.coords.longitude;
+            const label = await reverseGeocode(lat, lon) || 'Your location';
+            loc = { lat, lon, label };
+            setLoc(loc);
+            resolve();
+          }, () => { loc = KAMPALA; resolve(); }, { timeout: 6000, maximumAge: 600000 });
+        });
+      } else {
+        loc = KAMPALA;
+      }
+    }
+    fetchWeather(loc.lat, loc.lon, loc.label);
+    // Auto-refresh every 15 minutes
+    setInterval(() => fetchWeather(loc.lat, loc.lon, loc.label), 15 * 60 * 1000);
+  }
+
+  window.__diagroFetchWeather = init;
+  // Boot when DOM ready
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+
+  // Tap the weather card to refresh
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest && e.target.closest('#weatherCard');
+    if (card){
+      const loc = getLoc() || KAMPALA;
+      fetchWeather(loc.lat, loc.lon, loc.label);
+    }
+  });
+})();
+</script>
 })();
 </script>
 
